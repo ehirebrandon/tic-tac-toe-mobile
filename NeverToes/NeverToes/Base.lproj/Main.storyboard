@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +21,77 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Score" translatesAutoresizingMaskIntoConstraints="NO" id="SzW-F8-ieQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Board" translatesAutoresizingMaskIntoConstraints="NO" id="f8A-eF-U1a">
+                                <rect key="frame" x="0.0" y="133" width="375" height="382"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xW0-wh-BeP">
+                                <rect key="frame" x="0.0" y="515" width="375" height="152"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGI-5z-c3U">
+                                <rect key="frame" x="24" y="614" width="148" height="45"/>
+                                <state key="normal" title="Button" image="Restart"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-BI-TdY">
+                                <rect key="frame" x="187" y="614" width="161" height="45"/>
+                                <state key="normal" image="Reset"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUK-5H-hUV">
+                                <rect key="frame" x="197" y="532" width="62" height="60"/>
+                                <state key="normal" image="O"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwt-Mw-lgZ">
+                                <rect key="frame" x="272" y="532" width="62" height="60"/>
+                                <state key="normal" image="X"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select to Start:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uw1-S4-rQK">
+                                <rect key="frame" x="35" y="552" width="137" height="21"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iUK-5H-hUV" firstAttribute="top" secondItem="f8A-eF-U1a" secondAttribute="bottom" constant="17" id="1zV-Wb-t2J"/>
+                            <constraint firstItem="Uw1-S4-rQK" firstAttribute="top" secondItem="f8A-eF-U1a" secondAttribute="bottom" constant="37" id="5Fm-mN-Sad"/>
+                            <constraint firstItem="xW0-wh-BeP" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="6U8-Zq-obw"/>
+                            <constraint firstItem="3qW-BI-TdY" firstAttribute="top" secondItem="iUK-5H-hUV" secondAttribute="bottom" constant="22" id="6UI-IQ-OvQ"/>
+                            <constraint firstItem="3qW-BI-TdY" firstAttribute="leading" secondItem="IGI-5z-c3U" secondAttribute="trailing" constant="15" id="818-vV-7TJ"/>
+                            <constraint firstItem="Uw1-S4-rQK" firstAttribute="centerY" secondItem="iUK-5H-hUV" secondAttribute="centerY" id="ECW-c7-LbO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IGI-5z-c3U" secondAttribute="bottom" constant="8" symbolic="YES" id="LDR-lD-jW1"/>
+                            <constraint firstItem="Uw1-S4-rQK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="19" id="UKF-Tf-oPS"/>
+                            <constraint firstItem="iUK-5H-hUV" firstAttribute="top" secondItem="Hwt-Mw-lgZ" secondAttribute="top" id="VuY-aB-YfF"/>
+                            <constraint firstItem="SzW-F8-ieQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XnW-x6-Wkk"/>
+                            <constraint firstItem="IGI-5z-c3U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="ejE-zn-b7F"/>
+                            <constraint firstItem="IGI-5z-c3U" firstAttribute="top" secondItem="3qW-BI-TdY" secondAttribute="top" id="ejX-LP-xlw"/>
+                            <constraint firstItem="SzW-F8-ieQ" firstAttribute="leading" secondItem="f8A-eF-U1a" secondAttribute="leading" id="gTs-c9-otM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3qW-BI-TdY" secondAttribute="trailing" constant="11" id="glF-dF-lBd"/>
+                            <constraint firstItem="iUK-5H-hUV" firstAttribute="leading" secondItem="Uw1-S4-rQK" secondAttribute="trailing" constant="25" id="hS9-yG-nwp"/>
+                            <constraint firstItem="f8A-eF-U1a" firstAttribute="trailing" secondItem="xW0-wh-BeP" secondAttribute="trailing" id="iWw-DN-e4D"/>
+                            <constraint firstItem="xW0-wh-BeP" firstAttribute="top" secondItem="f8A-eF-U1a" secondAttribute="bottom" id="kcO-x8-E6y"/>
+                            <constraint firstItem="Hwt-Mw-lgZ" firstAttribute="leading" secondItem="iUK-5H-hUV" secondAttribute="trailing" constant="13" id="lzd-mv-wNd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hwt-Mw-lgZ" secondAttribute="trailing" constant="25" id="pTG-4l-PH8"/>
+                            <constraint firstItem="SzW-F8-ieQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pgJ-wL-beZ"/>
+                            <constraint firstItem="f8A-eF-U1a" firstAttribute="leading" secondItem="xW0-wh-BeP" secondAttribute="leading" id="qaj-Hn-HdC"/>
+                            <constraint firstItem="Uw1-S4-rQK" firstAttribute="trailing" secondItem="IGI-5z-c3U" secondAttribute="trailing" id="wr1-ID-NDq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="21.600000000000001" y="34.632683658170919"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Board" width="375" height="382"/>
+        <image name="O" width="62" height="60"/>
+        <image name="Reset" width="151" height="45"/>
+        <image name="Restart" width="151" height="45"/>
+        <image name="Score" width="375" height="135"/>
+        <image name="X" width="62" height="60"/>
+    </resources>
 </document>
