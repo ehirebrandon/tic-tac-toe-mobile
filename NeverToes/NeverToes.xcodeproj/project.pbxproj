@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CAF9234F1EBBD4BF00F461B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF9234E1EBBD4BF00F461B8 /* AppDelegate.swift */; };
+		CAF923511EBBD4BF00F461B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF923501EBBD4BF00F461B8 /* ViewController.swift */; };
+		CAF923541EBBD4BF00F461B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF923521EBBD4BF00F461B8 /* Main.storyboard */; };
+		CAF923571EBBD4BF00F461B8 /* NeverToes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAF923551EBBD4BF00F461B8 /* NeverToes.xcdatamodeld */; };
+		CAF923591EBBD4BF00F461B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF923581EBBD4BF00F461B8 /* Assets.xcassets */; };
+		CAF9235C1EBBD4BF00F461B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF9235A1EBBD4BF00F461B8 /* LaunchScreen.storyboard */; };
+		CAF923671EBBD4BF00F461B8 /* NeverToesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF923661EBBD4BF00F461B8 /* NeverToesTests.swift */; };
+		CAF923721EBBD4C000F461B8 /* NeverToesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF923711EBBD4C000F461B8 /* NeverToesUITests.swift */; };
+		CAF923801EBBD54300F461B8 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF9237F1EBBD54300F461B8 /* Notes.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CAF923631EBBD4BF00F461B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAF923431EBBD4BF00F461B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAF9234A1EBBD4BF00F461B8;
+			remoteInfo = NeverToes;
+		};
+		CAF9236E1EBBD4C000F461B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAF923431EBBD4BF00F461B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAF9234A1EBBD4BF00F461B8;
+			remoteInfo = NeverToes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CAF9234B1EBBD4BF00F461B8 /* NeverToes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeverToes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF9234E1EBBD4BF00F461B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CAF923501EBBD4BF00F461B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CAF923531EBBD4BF00F461B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CAF923561EBBD4BF00F461B8 /* NeverToes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NeverToes.xcdatamodel; sourceTree = "<group>"; };
+		CAF923581EBBD4BF00F461B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CAF9235B1EBBD4BF00F461B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CAF9235D1EBBD4BF00F461B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAF923621EBBD4BF00F461B8 /* NeverToesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeverToesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF923661EBBD4BF00F461B8 /* NeverToesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverToesTests.swift; sourceTree = "<group>"; };
+		CAF923681EBBD4C000F461B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAF9236D1EBBD4C000F461B8 /* NeverToesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeverToesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF923711EBBD4C000F461B8 /* NeverToesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverToesUITests.swift; sourceTree = "<group>"; };
+		CAF923731EBBD4C000F461B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAF9237F1EBBD54300F461B8 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CAF923481EBBD4BF00F461B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF9235F1EBBD4BF00F461B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF9236A1EBBD4C000F461B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CAF923421EBBD4BF00F461B8 = {
+			isa = PBXGroup;
+			children = (
+				CAF9234D1EBBD4BF00F461B8 /* NeverToes */,
+				CAF923651EBBD4BF00F461B8 /* NeverToesTests */,
+				CAF923701EBBD4C000F461B8 /* NeverToesUITests */,
+				CAF9234C1EBBD4BF00F461B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CAF9234C1EBBD4BF00F461B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CAF9234B1EBBD4BF00F461B8 /* NeverToes.app */,
+				CAF923621EBBD4BF00F461B8 /* NeverToesTests.xctest */,
+				CAF9236D1EBBD4C000F461B8 /* NeverToesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CAF9234D1EBBD4BF00F461B8 /* NeverToes */ = {
+			isa = PBXGroup;
+			children = (
+				CAF9237F1EBBD54300F461B8 /* Notes.swift */,
+				CAF923841EBBD59000F461B8 /* Setup */,
+				CAF923821EBBD56500F461B8 /* Controllers */,
+				CAF923811EBBD54B00F461B8 /* Storyboards */,
+				CAF923831EBBD58200F461B8 /* Others */,
+				CAF923851EBBD5A100F461B8 /* CoreData */,
+			);
+			path = NeverToes;
+			sourceTree = "<group>";
+		};
+		CAF923651EBBD4BF00F461B8 /* NeverToesTests */ = {
+			isa = PBXGroup;
+			children = (
+				CAF923661EBBD4BF00F461B8 /* NeverToesTests.swift */,
+				CAF923681EBBD4C000F461B8 /* Info.plist */,
+			);
+			path = NeverToesTests;
+			sourceTree = "<group>";
+		};
+		CAF923701EBBD4C000F461B8 /* NeverToesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CAF923711EBBD4C000F461B8 /* NeverToesUITests.swift */,
+				CAF923731EBBD4C000F461B8 /* Info.plist */,
+			);
+			path = NeverToesUITests;
+			sourceTree = "<group>";
+		};
+		CAF923811EBBD54B00F461B8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CAF923521EBBD4BF00F461B8 /* Main.storyboard */,
+				CAF9235A1EBBD4BF00F461B8 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		CAF923821EBBD56500F461B8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CAF923501EBBD4BF00F461B8 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CAF923831EBBD58200F461B8 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				CAF923581EBBD4BF00F461B8 /* Assets.xcassets */,
+				CAF9235D1EBBD4BF00F461B8 /* Info.plist */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		CAF923841EBBD59000F461B8 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				CAF9234E1EBBD4BF00F461B8 /* AppDelegate.swift */,
+			);
+			name = Setup;
+			sourceTree = "<group>";
+		};
+		CAF923851EBBD5A100F461B8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CAF923551EBBD4BF00F461B8 /* NeverToes.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CAF9234A1EBBD4BF00F461B8 /* NeverToes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAF923761EBBD4C000F461B8 /* Build configuration list for PBXNativeTarget "NeverToes" */;
+			buildPhases = (
+				CAF923471EBBD4BF00F461B8 /* Sources */,
+				CAF923481EBBD4BF00F461B8 /* Frameworks */,
+				CAF923491EBBD4BF00F461B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NeverToes;
+			productName = NeverToes;
+			productReference = CAF9234B1EBBD4BF00F461B8 /* NeverToes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CAF923611EBBD4BF00F461B8 /* NeverToesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAF923791EBBD4C000F461B8 /* Build configuration list for PBXNativeTarget "NeverToesTests" */;
+			buildPhases = (
+				CAF9235E1EBBD4BF00F461B8 /* Sources */,
+				CAF9235F1EBBD4BF00F461B8 /* Frameworks */,
+				CAF923601EBBD4BF00F461B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAF923641EBBD4BF00F461B8 /* PBXTargetDependency */,
+			);
+			name = NeverToesTests;
+			productName = NeverToesTests;
+			productReference = CAF923621EBBD4BF00F461B8 /* NeverToesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CAF9236C1EBBD4C000F461B8 /* NeverToesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAF9237C1EBBD4C000F461B8 /* Build configuration list for PBXNativeTarget "NeverToesUITests" */;
+			buildPhases = (
+				CAF923691EBBD4C000F461B8 /* Sources */,
+				CAF9236A1EBBD4C000F461B8 /* Frameworks */,
+				CAF9236B1EBBD4C000F461B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CAF9236F1EBBD4C000F461B8 /* PBXTargetDependency */,
+			);
+			name = NeverToesUITests;
+			productName = NeverToesUITests;
+			productReference = CAF9236D1EBBD4C000F461B8 /* NeverToesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CAF923431EBBD4BF00F461B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Brandon Lai";
+				TargetAttributes = {
+					CAF9234A1EBBD4BF00F461B8 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 86773TB4HG;
+						ProvisioningStyle = Automatic;
+					};
+					CAF923611EBBD4BF00F461B8 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 86773TB4HG;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CAF9234A1EBBD4BF00F461B8;
+					};
+					CAF9236C1EBBD4C000F461B8 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 86773TB4HG;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CAF9234A1EBBD4BF00F461B8;
+					};
+				};
+			};
+			buildConfigurationList = CAF923461EBBD4BF00F461B8 /* Build configuration list for PBXProject "NeverToes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CAF923421EBBD4BF00F461B8;
+			productRefGroup = CAF9234C1EBBD4BF00F461B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CAF9234A1EBBD4BF00F461B8 /* NeverToes */,
+				CAF923611EBBD4BF00F461B8 /* NeverToesTests */,
+				CAF9236C1EBBD4C000F461B8 /* NeverToesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CAF923491EBBD4BF00F461B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAF9235C1EBBD4BF00F461B8 /* LaunchScreen.storyboard in Resources */,
+				CAF923591EBBD4BF00F461B8 /* Assets.xcassets in Resources */,
+				CAF923541EBBD4BF00F461B8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF923601EBBD4BF00F461B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF9236B1EBBD4C000F461B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CAF923471EBBD4BF00F461B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAF923511EBBD4BF00F461B8 /* ViewController.swift in Sources */,
+				CAF9234F1EBBD4BF00F461B8 /* AppDelegate.swift in Sources */,
+				CAF923571EBBD4BF00F461B8 /* NeverToes.xcdatamodeld in Sources */,
+				CAF923801EBBD54300F461B8 /* Notes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF9235E1EBBD4BF00F461B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAF923671EBBD4BF00F461B8 /* NeverToesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF923691EBBD4C000F461B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAF923721EBBD4C000F461B8 /* NeverToesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CAF923641EBBD4BF00F461B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAF9234A1EBBD4BF00F461B8 /* NeverToes */;
+			targetProxy = CAF923631EBBD4BF00F461B8 /* PBXContainerItemProxy */;
+		};
+		CAF9236F1EBBD4C000F461B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAF9234A1EBBD4BF00F461B8 /* NeverToes */;
+			targetProxy = CAF9236E1EBBD4C000F461B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CAF923521EBBD4BF00F461B8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAF923531EBBD4BF00F461B8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CAF9235A1EBBD4BF00F461B8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAF9235B1EBBD4BF00F461B8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CAF923741EBBD4C000F461B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CAF923751EBBD4C000F461B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CAF923771EBBD4C000F461B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 86773TB4HG;
+				INFOPLIST_FILE = NeverToes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMG.NeverToes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CAF923781EBBD4C000F461B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 86773TB4HG;
+				INFOPLIST_FILE = NeverToes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMG.NeverToes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		CAF9237A1EBBD4C000F461B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 86773TB4HG;
+				INFOPLIST_FILE = NeverToesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMG.NeverToesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeverToes.app/NeverToes";
+			};
+			name = Debug;
+		};
+		CAF9237B1EBBD4C000F461B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 86773TB4HG;
+				INFOPLIST_FILE = NeverToesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMG.NeverToesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeverToes.app/NeverToes";
+			};
+			name = Release;
+		};
+		CAF9237D1EBBD4C000F461B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 86773TB4HG;
+				INFOPLIST_FILE = NeverToesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMG.NeverToesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = NeverToes;
+			};
+			name = Debug;
+		};
+		CAF9237E1EBBD4C000F461B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 86773TB4HG;
+				INFOPLIST_FILE = NeverToesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMG.NeverToesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = NeverToes;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CAF923461EBBD4BF00F461B8 /* Build configuration list for PBXProject "NeverToes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF923741EBBD4C000F461B8 /* Debug */,
+				CAF923751EBBD4C000F461B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAF923761EBBD4C000F461B8 /* Build configuration list for PBXNativeTarget "NeverToes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF923771EBBD4C000F461B8 /* Debug */,
+				CAF923781EBBD4C000F461B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CAF923791EBBD4C000F461B8 /* Build configuration list for PBXNativeTarget "NeverToesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF9237A1EBBD4C000F461B8 /* Debug */,
+				CAF9237B1EBBD4C000F461B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CAF9237C1EBBD4C000F461B8 /* Build configuration list for PBXNativeTarget "NeverToesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF9237D1EBBD4C000F461B8 /* Debug */,
+				CAF9237E1EBBD4C000F461B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CAF923551EBBD4BF00F461B8 /* NeverToes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CAF923561EBBD4BF00F461B8 /* NeverToes.xcdatamodel */,
+			);
+			currentVersion = CAF923561EBBD4BF00F461B8 /* NeverToes.xcdatamodel */;
+			path = NeverToes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CAF923431EBBD4BF00F461B8 /* Project object */;
+}
