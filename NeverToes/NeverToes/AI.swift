@@ -19,4 +19,6 @@ struct AI{
         self.lose = lose
     }
     
+    
+    
 }
