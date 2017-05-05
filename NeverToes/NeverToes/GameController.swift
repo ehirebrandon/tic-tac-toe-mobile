@@ -15,18 +15,18 @@ class GameController: UIViewController, StartGame {
     @IBOutlet weak var playerWin: UILabel!
     @IBOutlet weak var playerLose: UILabel!
     
-    let aX = UIImage(named: "X")!
-    let aO = UIImage(named: "O")!
-    var nextAlias: UIImage?
-    var aiAlias: UIImage?
-    var currentPlayer: String?
-    var flag: Bool?
+    fileprivate let aX = UIImage(named: "X")!
+    fileprivate let aO = UIImage(named: "O")!
+    fileprivate var nextAlias: UIImage?
+    fileprivate var aiAlias: UIImage?
+    fileprivate var currentPlayer: String?
+    fileprivate var flag: Bool?
     
     
-    var player: Player? = nil
-    var ai: AI? = nil
+    fileprivate var player: Player? = nil
+    fileprivate var ai: AI? = nil
     
-    var gameBoard = ["0","1","2",
+    fileprivate var gameBoard = ["0","1","2",
                      "3","4","5",
                      "6","7","8"]
     
@@ -47,7 +47,7 @@ class GameController: UIViewController, StartGame {
                     print(gameBoard)
                     waitAi(playerMove: 0)//semaphores
                     if(gameCheck(gameBoard: gameBoard)){
-                    popWinner()
+                        popWinner()
                     }
                 }
                 return
@@ -385,9 +385,14 @@ class GameController: UIViewController, StartGame {
             if(lookForWin(client: (ai?.alias)!)){
                 //aiWon pop up controller
             }
+            //List of priorities of how the game should be played
+            //Look for next move
             if(!lookForWin(client: (ai?.alias)!)){
+                //look for a block if that is not possible
                 lookForBlock()
+                //look for an optimal set up for a double in order to win the next
                 lookForDouble(board: gameBoard)
+                //if with no avail randomize a non-detrimental move
                 lookForSingle()
             }
             
@@ -498,16 +503,11 @@ class GameController: UIViewController, StartGame {
                     case 8: bottomRight.setImage(aiAlias, for: UIControlState.normal)
                     default: print("There is an error")
                     }
-                    
                 }
             }
             break
         }
     }
-    
-    
-    
-    
     
     
     func lookForDoubleWin(board: [String]) -> Bool{
@@ -561,7 +561,7 @@ class GameController: UIViewController, StartGame {
                 case 7: down.setImage(aiAlias, for: UIControlState.normal)
                 case 8: bottomRight.setImage(aiAlias, for: UIControlState.normal)
                 default: print("There is an error")
-                break
+                    break
                 }
             }
         }
