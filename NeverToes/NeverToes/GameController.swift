@@ -19,6 +19,7 @@ class GameController: UIViewController, StartGame {
     let aO = UIImage(named: "O")!
     var nextAlias: UIImage?
     var currentPlayer: String?
+    var flag: Bool?
     
     
     var player: Player? = nil
@@ -38,11 +39,20 @@ class GameController: UIViewController, StartGame {
     @IBAction func upperLeft(_ sender: Any) {
         if(checkSelect()){
             guard((upperLeft.currentImage?.isEqual(aX))! || (upperLeft.currentImage?.isEqual(aO))!) else{
-                upperLeft.setImage(nextAlias, for: UIControlState.normal)
-                gameBoard[0] = currentPlayer!
-                print(gameCheck())
-                print(gameBoard)
+                if (!flag!){
+                    upperLeft.setImage(nextAlias, for: UIControlState.normal)
+                    gameBoard[0] = currentPlayer!
+                    print(gameCheck())
+                    print(gameBoard)
+                    waitAi(board: gameBoard, playerMove: 0)//semaphores
+                }
+                if (flag!){
+                    waitPlayer()
+                }
                 return
+                
+                
+                
             }
             print(gameBoard)
         }
@@ -51,10 +61,16 @@ class GameController: UIViewController, StartGame {
     @IBAction func up(_ sender: Any) {
         if(checkSelect()){
             guard((up.currentImage?.isEqual(aX))! || (up.currentImage?.isEqual(aO))!) else{
-                up.setImage(nextAlias, for: UIControlState.normal)
-                gameBoard[1] = currentPlayer!
-                print(gameCheck())
-                print(gameBoard)
+                if (!flag!){
+                    up.setImage(nextAlias, for: UIControlState.normal)
+                    gameBoard[1] = currentPlayer!
+                    print(gameCheck())
+                    print(gameBoard)
+                    waitAi(board: gameBoard, playerMove: 1)//semaphores
+                }
+                if (flag!){
+                    waitPlayer()
+                }
                 return
             }
             print(gameBoard)
@@ -64,10 +80,16 @@ class GameController: UIViewController, StartGame {
     @IBAction func upperRight(_ sender: Any) {
         if(checkSelect()){
             guard((upperRight.currentImage?.isEqual(aX))! || (upperRight.currentImage?.isEqual(aO))!) else{
-                upperRight.setImage(nextAlias, for: UIControlState.normal)
-                gameBoard[2] = currentPlayer!
-                print(gameCheck())
-                print(gameBoard)
+                if (!flag!){
+                    upperRight.setImage(nextAlias, for: UIControlState.normal)
+                    gameBoard[2] = currentPlayer!
+                    print(gameCheck())
+                    print(gameBoard)
+                    waitAi(board: gameBoard, playerMove: 2)//semaphores
+                }
+                if (flag!){
+                    waitPlayer()
+                }
                 return
             }
             print(gameBoard)
@@ -77,10 +99,16 @@ class GameController: UIViewController, StartGame {
     @IBAction func left(_ sender: Any) {
         if(checkSelect()){
             guard((left.currentImage?.isEqual(aX))! || (left.currentImage?.isEqual(aO))!) else{
-                left.setImage(nextAlias, for: UIControlState.normal)
-                gameBoard[3] = currentPlayer!
-                print(gameCheck())
-                print(gameBoard)
+                if (!flag!){
+                    left.setImage(nextAlias, for: UIControlState.normal)
+                    gameBoard[3] = currentPlayer!
+                    print(gameCheck())
+                    print(gameBoard)
+                    waitAi(board: gameBoard, playerMove: 3)//semaphores
+                }
+                if (flag!){
+                    waitPlayer()
+                }
                 return
             }
             print(gameBoard)
@@ -90,10 +118,16 @@ class GameController: UIViewController, StartGame {
     @IBAction func middle(_ sender: Any) {
         if(checkSelect()){
             guard((middle.currentImage?.isEqual(aX))! || (middle.currentImage?.isEqual(aO))!) else{
-                middle.setImage(nextAlias, for: UIControlState.normal)
-                gameBoard[4] = currentPlayer!
-                print(gameCheck())
-                print(gameBoard)
+                if (!flag!){
+                    middle.setImage(nextAlias, for: UIControlState.normal)
+                    gameBoard[4] = currentPlayer!
+                    print(gameCheck())
+                    print(gameBoard)
+                    waitAi(board: gameBoard, playerMove: 4)//semaphores
+                }
+                if (flag!){
+                    waitPlayer()
+                }
                 return
             }
             print(gameBoard)
@@ -103,10 +137,16 @@ class GameController: UIViewController, StartGame {
     @IBAction func right(_ sender: Any) {
         if(checkSelect()){
             guard((right.currentImage?.isEqual(aX))! || (right.currentImage?.isEqual(aO))!) else{
-                right.setImage(nextAlias, for: UIControlState.normal)
-                gameBoard[5] = currentPlayer!
-                print(gameCheck())
-                print(gameBoard)
+                if (!flag!){
+                    right.setImage(nextAlias, for: UIControlState.normal)
+                    gameBoard[5] = currentPlayer!
+                    print(gameCheck())
+                    print(gameBoard)
+                    waitAi(board: gameBoard, playerMove: 5)//semaphores
+                }
+                if (flag!){
+                    waitPlayer()
+                }
                 return
             }
             print(gameBoard)
@@ -117,10 +157,16 @@ class GameController: UIViewController, StartGame {
     @IBAction func bottomLeft(_ sender: Any) {
         if(checkSelect()){
             guard((bottomLeft.currentImage?.isEqual(aX))! || (bottomLeft.currentImage?.isEqual(aO))!) else{
-                bottomLeft.setImage(nextAlias, for: UIControlState.normal)
-                gameBoard[6] = currentPlayer!
-                print(gameCheck())
-                print(gameBoard)
+                if (!flag!){
+                    bottomLeft.setImage(nextAlias, for: UIControlState.normal)
+                    gameBoard[6] = currentPlayer!
+                    print(gameCheck())
+                    print(gameBoard)
+                    waitAi(board: gameBoard, playerMove: 6)//semaphores
+                }
+                if (flag!){
+                    waitPlayer()
+                }
                 return
             }
             print(gameBoard)
@@ -130,10 +176,16 @@ class GameController: UIViewController, StartGame {
     @IBAction func down(_ sender: Any) {
         if(checkSelect()){
             guard((down.currentImage?.isEqual(aX))! || (down.currentImage?.isEqual(aO))!) else{
-                down.setImage(nextAlias, for: UIControlState.normal)
-                gameBoard[7] = currentPlayer!
-                print(gameCheck())
-                print(gameBoard)
+                if (!flag!){
+                    down.setImage(nextAlias, for: UIControlState.normal)
+                    gameBoard[7] = currentPlayer!
+                    print(gameCheck())
+                    print(gameBoard)
+                    waitAi(board: gameBoard, playerMove: 7)//semaphores
+                }
+                if (flag!){
+                    waitPlayer()
+                }
                 return
             }
             print(gameBoard)
@@ -143,10 +195,16 @@ class GameController: UIViewController, StartGame {
     @IBAction func bottomRight(_ sender: Any) {
         if(checkSelect()){
             guard((bottomRight.currentImage?.isEqual(aX))! || (bottomRight.currentImage?.isEqual(aO))!) else{
-                bottomRight.setImage(nextAlias, for: UIControlState.normal)
-                gameBoard[8] = currentPlayer!
-                print(gameCheck())
-                print(gameBoard)
+                if (!flag!){
+                    bottomRight.setImage(nextAlias, for: UIControlState.normal)
+                    gameBoard[8] = currentPlayer!
+                    print(gameCheck())
+                    print(gameBoard)
+                    waitAi(board: gameBoard, playerMove: 8)//semaphores
+                }
+                if (flag!){
+                    waitPlayer()
+                }
                 return
             }
             print(gameBoard)
@@ -160,7 +218,7 @@ class GameController: UIViewController, StartGame {
             ai = AI(alias: "X", win: 0, lose: 0)
         }
         nextAlias = aO
-        currentPlayer = "O"
+        currentPlayer = ai?.alias
         selectX.setImage(aX.dim(by: 0.5), for: UIControlState.normal)
         selectO.setImage(aO, for: UIControlState.normal)
         self.playerIcon.setImage(aO, for: UIControlState.normal)
@@ -172,7 +230,7 @@ class GameController: UIViewController, StartGame {
             player = Player(alias: "X", win: 0, lose: 0)
             ai = AI(alias: "O", win: 0, lose: 0)
         }
-        currentPlayer = "X"
+        currentPlayer = player?.alias
         nextAlias = aX
         selectO.setImage(aO.dim(by: 0.5), for: UIControlState.normal)
         selectX.setImage(aX, for: UIControlState.normal)
@@ -192,6 +250,7 @@ class GameController: UIViewController, StartGame {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        flag = false
         
         
     }
@@ -234,7 +293,45 @@ class GameController: UIViewController, StartGame {
         return false
     }
     
+    func waitAi(board: [String], playerMove: Int){
+        flag = true
+        aiMoves(board: board, playerMove: playerMove)
+    }
+    func waitPlayer(){
+        flag = true
+    }
+    
+    //ai algorithm/method of winning
+    func aiMoves(board: [String], playerMove: Int){
+        //base condition
+        if (boardFirstMove()){
+        //Case 1: If players go anywhere on [0,2,6,8] AI must go to [4]
+            if (board[playerMove] == currentPlayer){
+                
+            }
+        //Case 2: If players go to [4] AI must go to [0,2,6,8]
+        //Case 3: If Player -> [1,3,5,7] AI -> Anywhere
+        }
+    }
     // MARK: Helper Functions
+    func boardFirstMove() -> Bool{
+        var checkPlayerExist = 0;
+        for i in 0 ..< gameBoard.count{
+            if gameBoard[i] == currentPlayer!{
+                checkPlayerExist += 1
+            }
+        }
+        if checkPlayerExist == 1{
+            return true
+        }else{
+            return false
+        }
+        
+        
+    }
+    
+    
+    
     func checkSelect()-> Bool{
         var bool = true
         if (nextAlias == nil){
