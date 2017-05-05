@@ -305,6 +305,7 @@ class GameController: UIViewController, StartGame {
     func waitAi(playerMove: Int){
         flag = true
         aiMoves(playerMove: playerMove)
+        flag = false
     }
     func waitPlayer(){
         flag = true
@@ -360,9 +361,40 @@ class GameController: UIViewController, StartGame {
                     }
                 }
             }
+        }else{
+            if(lookForWin()){
+                //aiWon pop up controller
+            }
+            if(!lookForWin()){
+                lookForBlock()
+                lookForDouble()
+                lookForSingle()
+            }
+            
         }
     }
     // MARK: Helper Functions
+    func lookForWin() -> Bool{
+        var checkPlayerExist = 0;
+        for i in 0 ..< gameBoard.count{
+            if gameBoard[i] == currentPlayer!{
+                checkPlayerExist += 1
+            }
+        }
+        if checkPlayerExist <= 2{
+            return false
+        }else{
+            return true
+        }
+    }
+    
+    func lookForBlock(){
+    }
+    func lookForDouble(){
+    }
+    func lookForSingle(){
+    }
+    
     func boardFirstMove() -> Bool{
         var checkPlayerExist = 0;
         for i in 0 ..< gameBoard.count{
@@ -375,8 +407,6 @@ class GameController: UIViewController, StartGame {
         }else{
             return false
         }
-        
-        
     }
     
     
