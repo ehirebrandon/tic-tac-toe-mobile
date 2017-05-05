@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CAF9234F1EBBD4BF00F461B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF9234E1EBBD4BF00F461B8 /* AppDelegate.swift */; };
-		CAF923511EBBD4BF00F461B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF923501EBBD4BF00F461B8 /* ViewController.swift */; };
+		CAF923511EBBD4BF00F461B8 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF923501EBBD4BF00F461B8 /* GameController.swift */; };
 		CAF923541EBBD4BF00F461B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF923521EBBD4BF00F461B8 /* Main.storyboard */; };
 		CAF923571EBBD4BF00F461B8 /* NeverToes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAF923551EBBD4BF00F461B8 /* NeverToes.xcdatamodeld */; };
 		CAF923591EBBD4BF00F461B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF923581EBBD4BF00F461B8 /* Assets.xcassets */; };
@@ -16,6 +16,10 @@
 		CAF923671EBBD4BF00F461B8 /* NeverToesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF923661EBBD4BF00F461B8 /* NeverToesTests.swift */; };
 		CAF923721EBBD4C000F461B8 /* NeverToesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF923711EBBD4C000F461B8 /* NeverToesUITests.swift */; };
 		CAF923801EBBD54300F461B8 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF9237F1EBBD54300F461B8 /* Notes.swift */; };
+		CAF923871EBBEB6000F461B8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF923861EBBEB6000F461B8 /* Player.swift */; };
+		CAF9238A1EBBEB7B00F461B8 /* AI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF923891EBBEB7B00F461B8 /* AI.swift */; };
+		CAF9238F1EBBEC9900F461B8 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF9238E1EBBEC9900F461B8 /* Action.swift */; };
+		CAF923911EBBEE8700F461B8 /* MoveError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF923901EBBEE8700F461B8 /* MoveError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 /* Begin PBXFileReference section */
 		CAF9234B1EBBD4BF00F461B8 /* NeverToes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeverToes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF9234E1EBBD4BF00F461B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CAF923501EBBD4BF00F461B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CAF923501EBBD4BF00F461B8 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		CAF923531EBBD4BF00F461B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAF923561EBBD4BF00F461B8 /* NeverToes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NeverToes.xcdatamodel; sourceTree = "<group>"; };
 		CAF923581EBBD4BF00F461B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +55,10 @@
 		CAF923711EBBD4C000F461B8 /* NeverToesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverToesUITests.swift; sourceTree = "<group>"; };
 		CAF923731EBBD4C000F461B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF9237F1EBBD54300F461B8 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		CAF923861EBBEB6000F461B8 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		CAF923891EBBEB7B00F461B8 /* AI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AI.swift; sourceTree = "<group>"; };
+		CAF9238E1EBBEC9900F461B8 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		CAF923901EBBEE8700F461B8 /* MoveError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +110,14 @@
 			isa = PBXGroup;
 			children = (
 				CAF9237F1EBBD54300F461B8 /* Notes.swift */,
+				CAF9238D1EBBEBD500F461B8 /* Interface/Protocols */,
 				CAF923841EBBD59000F461B8 /* Setup */,
 				CAF923821EBBD56500F461B8 /* Controllers */,
 				CAF923811EBBD54B00F461B8 /* Storyboards */,
 				CAF923831EBBD58200F461B8 /* Others */,
 				CAF923851EBBD5A100F461B8 /* CoreData */,
+				CAF923881EBBEB6500F461B8 /* Models */,
+				CAF923901EBBEE8700F461B8 /* MoveError.swift */,
 			);
 			path = NeverToes;
 			sourceTree = "<group>";
@@ -141,7 +152,7 @@
 		CAF923821EBBD56500F461B8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CAF923501EBBD4BF00F461B8 /* ViewController.swift */,
+				CAF923501EBBD4BF00F461B8 /* GameController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +180,23 @@
 				CAF923551EBBD4BF00F461B8 /* NeverToes.xcdatamodeld */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		CAF923881EBBEB6500F461B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CAF923861EBBEB6000F461B8 /* Player.swift */,
+				CAF923891EBBEB7B00F461B8 /* AI.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CAF9238D1EBBEBD500F461B8 /* Interface/Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CAF9238E1EBBEC9900F461B8 /* Action.swift */,
+			);
+			name = Interface/Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,10 +336,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAF923511EBBD4BF00F461B8 /* ViewController.swift in Sources */,
+				CAF923511EBBD4BF00F461B8 /* GameController.swift in Sources */,
 				CAF9234F1EBBD4BF00F461B8 /* AppDelegate.swift in Sources */,
 				CAF923571EBBD4BF00F461B8 /* NeverToes.xcdatamodeld in Sources */,
+				CAF923911EBBEE8700F461B8 /* MoveError.swift in Sources */,
+				CAF923871EBBEB6000F461B8 /* Player.swift in Sources */,
+				CAF9238F1EBBEC9900F461B8 /* Action.swift in Sources */,
 				CAF923801EBBD54300F461B8 /* Notes.swift in Sources */,
+				CAF9238A1EBBEB7B00F461B8 /* AI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
