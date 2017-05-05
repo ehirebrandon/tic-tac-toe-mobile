@@ -246,6 +246,8 @@
                         <outlet property="playerLose" destination="rAi-dN-SE0" id="5cQ-MK-17T"/>
                         <outlet property="playerWin" destination="pjf-48-sH0" id="s9b-pU-RO9"/>
                         <outlet property="right" destination="LzN-Xh-fEt" id="rGi-s1-d7n"/>
+                        <outlet property="selectO" destination="iUK-5H-hUV" id="b4k-yV-PUG"/>
+                        <outlet property="selectX" destination="Hwt-Mw-lgZ" id="CKI-5H-sRU"/>
                         <outlet property="up" destination="GjX-g6-8rJ" id="sh4-hA-g9z"/>
                         <outlet property="upperLeft" destination="pbb-ro-h30" id="UVe-7f-IBv"/>
                         <outlet property="upperRight" destination="drB-Ep-KuG" id="hSf-kO-9oz"/>

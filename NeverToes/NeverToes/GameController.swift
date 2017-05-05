@@ -25,8 +25,8 @@ class GameController: UIViewController, StartGame {
     // AI & Player Icons Actions & Outlets
     @IBOutlet weak var aiIcon: UIButton!
     @IBOutlet weak var playerIcon: UIButton!
-    // Board Actions & Outlets
     
+    // Board Actions & Outlets
     @IBOutlet weak var upperLeft: UIButton!
     @IBAction func upperLeft(_ sender: Any) {
         if(checkSelect()){
@@ -67,11 +67,21 @@ class GameController: UIViewController, StartGame {
         bottomRight.setImage(nextAlias, for: UIControlState.normal)
     }
     // Select & Re-[Set/Start] buttons
+    @IBOutlet weak var selectO: UIButton!
     @IBAction func selectO(_ sender: Any) {
         nextAlias = aO
+        selectX.setImage(aX.dim(by: 0.5), for: UIControlState.normal)
+        selectO.setImage(aO, for: UIControlState.normal)
+        self.playerIcon.setImage(aO, for: UIControlState.normal)
+        self.aiIcon.setImage(aX, for: UIControlState.normal)
     }
+    @IBOutlet weak var selectX: UIButton!
     @IBAction func selectX(_ sender: Any) {
         nextAlias = aX
+        selectO.setImage(aO.dim(by: 0.5), for: UIControlState.normal)
+        selectX.setImage(aX, for: UIControlState.normal)
+        self.playerIcon.setImage(aX, for: UIControlState.normal)
+        self.aiIcon.setImage(aO, for: UIControlState.normal)
     }
     @IBAction func restart(_ sender: Any) {
         clearBoard()
@@ -109,7 +119,6 @@ class GameController: UIViewController, StartGame {
             self.present(alertController, animated: true, completion: nil)
         }
         return bool
-        
     }
     
     
@@ -130,7 +139,17 @@ class GameController: UIViewController, StartGame {
         playerWin.text = "\(0)"
         playerLose.text = "\(0)"
     }
-    
+
     
 }
+
+extension UIImage{
+    func dim(by: CGFloat) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: 62, height: 60), false, 1)
+        draw(at: CGPoint.zero, blendMode: .normal, alpha: by)
+        let dimImage = UIGraphicsGetImageFromCurrentImageContext()
+        return dimImage!
+    }
+}
+
 
