@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NeverToes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameController" customModule="NeverToes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -69,14 +69,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-ro-h30" userLabel="UpperLeft">
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
+                                                <connections>
+                                                    <action selector="upperLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TeM-pU-Ugj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjX-g6-8rJ" userLabel="Up">
                                                 <rect key="frame" x="122" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
+                                                <connections>
+                                                    <action selector="up:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kwC-XG-awa"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drB-Ep-KuG" userLabel="UpperRight">
                                                 <rect key="frame" x="244" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
+                                                <connections>
+                                                    <action selector="upperRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fC-84-YF6"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -86,14 +95,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82h-qH-uTz" userLabel="Left">
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
+                                                <connections>
+                                                    <action selector="left:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ao-Th-Rmi"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEq-ph-GOm" userLabel="Middle">
                                                 <rect key="frame" x="122" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
+                                                <connections>
+                                                    <action selector="middle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pgq-8h-Es3"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzN-Xh-fEt" userLabel="Right">
                                                 <rect key="frame" x="244" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
+                                                <connections>
+                                                    <action selector="right:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Not-RH-oeV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -103,14 +121,23 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Not-54-Hcf" userLabel="BottomLeft">
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
+                                                <connections>
+                                                    <action selector="bottomLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HfJ-ue-AVf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cX2-ch-NxG" userLabel="Down">
                                                 <rect key="frame" x="122" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
+                                                <connections>
+                                                    <action selector="down:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SZ3-u4-Uf4"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKR-R3-JoD" userLabel="BottomRight">
                                                 <rect key="frame" x="244" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
+                                                <connections>
+                                                    <action selector="bottomRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4vz-x8-N4F"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -160,6 +187,19 @@
                             <constraint firstItem="l2c-9z-JtP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="xiY-We-fwc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="aiIcon" destination="l2c-9z-JtP" id="Dbs-tz-Uk1"/>
+                        <outlet property="bottomLeft" destination="Not-54-Hcf" id="Wjc-dd-Ccf"/>
+                        <outlet property="bottomRight" destination="nKR-R3-JoD" id="xFU-yf-7Aa"/>
+                        <outlet property="down" destination="cX2-ch-NxG" id="ZXQ-Og-Vp5"/>
+                        <outlet property="left" destination="82h-qH-uTz" id="fRC-a1-Ygw"/>
+                        <outlet property="middle" destination="UEq-ph-GOm" id="vOH-LU-lbE"/>
+                        <outlet property="playerIcon" destination="eg6-cT-V7d" id="mqq-cu-77p"/>
+                        <outlet property="right" destination="LzN-Xh-fEt" id="rGi-s1-d7n"/>
+                        <outlet property="up" destination="GjX-g6-8rJ" id="sh4-hA-g9z"/>
+                        <outlet property="upperLeft" destination="pbb-ro-h30" id="UVe-7f-IBv"/>
+                        <outlet property="upperRight" destination="drB-Ep-KuG" id="hSf-kO-9oz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
