@@ -620,6 +620,14 @@ class GameController: UIViewController, StartGame {
         bottomLeft.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
         down.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
         bottomRight.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
+        nextAlias = nil
+        aiAlias = nil
+        player = nil
+        ai = nil
+        flag = false
+        gameBoard =  ["0","1","2",
+                      "3","4","5",
+                      "6","7","8"]
     }
     func scoreReset(){
         nextAlias = nil
