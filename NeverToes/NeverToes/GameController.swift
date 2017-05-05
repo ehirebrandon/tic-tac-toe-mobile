@@ -622,12 +622,18 @@ class GameController: UIViewController, StartGame {
         bottomRight.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
     }
     func scoreReset(){
+        nextAlias = nil
+        aiAlias = nil
         aiWin.text = "\(0)"
         aiLose.text = "\(0)"
         playerWin.text = "\(0)"
         playerLose.text = "\(0)"
         player = nil
         ai = nil
+        flag = false
+        gameBoard =  ["0","1","2",
+                      "3","4","5",
+                      "6","7","8"]
     }
     
     
