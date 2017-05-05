@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Action {
+protocol Actions{
     // AI & Players should be able to both do this
     // Set a move
     func setMove() throws
@@ -21,6 +21,6 @@ protocol Action {
     
 }
 
-protocol startGame{
+protocol StartGame{
     func play()
 }
