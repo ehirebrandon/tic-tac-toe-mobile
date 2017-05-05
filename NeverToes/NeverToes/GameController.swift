@@ -21,14 +21,14 @@ class GameController: UIViewController, StartGame {
     fileprivate var aiAlias: UIImage?
     fileprivate var currentPlayer: String?
     fileprivate var flag: Bool?
-    
+    fileprivate var gameStop: Bool?
     
     fileprivate var player: Player? = nil
     fileprivate var ai: AI? = nil
     
     fileprivate var gameBoard = ["0","1","2",
-                     "3","4","5",
-                     "6","7","8"]
+                                 "3","4","5",
+                                 "6","7","8"]
     
     
     // AI & Player Icons Actions & Outlets
@@ -245,14 +245,12 @@ class GameController: UIViewController, StartGame {
         clearBoard()
     }
     
-    
+    //+++++++++++++++++++++++++++++++++ START +++++++++++++++++++++++++++++++++++++++++++++
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         flag = false
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -262,8 +260,8 @@ class GameController: UIViewController, StartGame {
     
     // MARK: Conformance >> StartGame
     func play(){
-        
     }
+    
     func gameCheck(gameBoard: [String]) -> Bool{
         
         if (gameBoard[0] == gameBoard[1] && gameBoard[1] == gameBoard[2]){
@@ -419,7 +417,7 @@ class GameController: UIViewController, StartGame {
                         gameCopy[i] = (ai?.alias)!
                         if (gameCheck(gameBoard: gameCopy)){
                             aWinner = true
-                            print("We have a winning move")
+                            print("AI: WINNING MOVE AVAILABLE")
                             gameBoard[i] = (ai?.alias)!
                             switch(i){
                             case 0: upperLeft.setImage(aiAlias, for: UIControlState.normal)
@@ -439,34 +437,41 @@ class GameController: UIViewController, StartGame {
                 }
             }
         case (player?.alias)!:
-            print("mama")
             for i in 0 ..< gameBoard.count{
                 if gameBoard[i] == currentPlayer!{
                     checkPlayerExist += 1
                 }
             }
             if checkPlayerExist < 2{
-                print("lessthan2")
                 return false
             }else{
-                for i in 0 ..< gameBoard.count{
+                labels: for i in 0 ..< gameBoard.count{
                     if (gameBoard[i] != player?.alias || gameBoard[i] != ai?.alias){
                         var gameCopy = gameBoard
                         gameCopy[i] = (player?.alias)!
                         if (gameCheck(gameBoard: gameCopy)){
-                            print("Player have a winning move")
+                            print("Block: Player have a WIN MOVE")
                             gameBoard[i] = (ai?.alias)!
                             aWinner = true
                             switch(i){
                             case 0: upperLeft.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 1: up.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 2: upperRight.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 3: left.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 4: middle.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 5: right.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 6: bottomLeft.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 7: down.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 8: bottomRight.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             default: print("There is an error")
                             }
                         }
@@ -475,6 +480,7 @@ class GameController: UIViewController, StartGame {
             }
         default: print("Nothing here")
         }
+       
         return aWinner
     }
     
@@ -529,9 +535,8 @@ class GameController: UIViewController, StartGame {
                     gameCopy[i] = (ai?.alias)!
                     if (gameCheck(gameBoard: gameCopy) && reverseGameCheck(gameBoard: gameCopy)){
                         aDoubleWinner = true
-                        print("We have a double winning move")
+                        print("DOUBLE WIN AVAILABLE")
                     }
-                    
                 }
             }
         }
