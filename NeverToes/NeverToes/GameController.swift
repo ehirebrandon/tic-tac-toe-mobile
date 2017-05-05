@@ -46,13 +46,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 0)//semaphores
-                    if(gameCheck(gameBoard: gameBoard)){
-                        popWinner()
-                    }
                 }
                 return
             }
-            print(gameBoard)
         }
     }
     @IBOutlet weak var up: UIButton!
@@ -65,13 +61,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 1)//semaphores
-                    if(gameCheck(gameBoard: gameBoard)){
-                        popWinner()
-                    }
                 }
                 return
             }
-            print(gameBoard)
         }
     }
     @IBOutlet weak var upperRight: UIButton!
@@ -84,13 +76,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 2)//semaphores
-                    if(gameCheck(gameBoard: gameBoard)){
-                        popWinner()
-                    }
                 }
                 return
             }
-            print(gameBoard)
         }
     }
     @IBOutlet weak var left: UIButton!
@@ -103,13 +91,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 3)//semaphores
-                    if(gameCheck(gameBoard: gameBoard)){
-                        popWinner()
-                    }
                 }
                 return
             }
-            print(gameBoard)
         }
     }
     @IBOutlet weak var middle: UIButton!
@@ -122,13 +106,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 4)//semaphores
-                    if(gameCheck(gameBoard: gameBoard)){
-                        popWinner()
-                    }
                 }
                 return
             }
-            print(gameBoard)
         }
     }
     @IBOutlet weak var right: UIButton!
@@ -141,13 +121,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 5)//semaphores
-                    if(gameCheck(gameBoard: gameBoard)){
-                        popWinner()
-                    }
                 }
                 return
             }
-            print(gameBoard)
         }
     }
     @IBOutlet weak var bottomLeft: UIButton!
@@ -161,13 +137,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 6)//semaphores
-                    if(gameCheck(gameBoard: gameBoard)){
-                        popWinner()
-                    }
                 }
                 return
             }
-            print(gameBoard)
         }
     }
     @IBOutlet weak var down: UIButton!
@@ -180,13 +152,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 7)//semaphores
-                    if(gameCheck(gameBoard: gameBoard)){
-                        popWinner()
-                    }
                 }
                 return
             }
-            print(gameBoard)
         }
     }
     @IBOutlet weak var bottomRight: UIButton!
@@ -199,13 +167,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 8)//semaphores
-                    if(gameCheck(gameBoard: gameBoard)){
-                        popWinner()
-                    }
                 }
                 return
             }
-            print(gameBoard)
         }
     }
     // Select & Re-[Set/Start] buttons
@@ -336,15 +300,12 @@ class GameController: UIViewController, StartGame {
             if ((playerMove == 0) || (playerMove == 2) || (playerMove == 6) || (playerMove == 8)){
                 middle.setImage(aiAlias, for: UIControlState.normal)
                 self.gameBoard[4] = (ai?.alias)!
-                print(gameBoard)
             }
             //Case 2: If players go to [4] AI must go to [0,2,6,8]
             if ((playerMove == 4)){
                 let randomArray = [0,2,6,8]
                 let randomNumber = Int(arc4random_uniform(4))
-                print("Random Number: \(randomNumber)")
                 let resultRandom = randomArray[randomNumber]
-                print(resultRandom)
                 self.gameBoard[resultRandom] = (ai?.alias)!
                 switch(resultRandom){
                 case 0: upperLeft.setImage(aiAlias, for: UIControlState.normal)
@@ -355,14 +316,13 @@ class GameController: UIViewController, StartGame {
                 }
             }
             //Case 3: If Player -> [1,3,5,7] AI -> Anywhere
+            label:
             if ((playerMove == 1) || (playerMove == 3) || (playerMove == 5) || (playerMove == 7)){
                 let randomArray = [0,1,2,3,5,6,7,8]
                 let randomNumber = Int(arc4random_uniform(8))
-                print("Random Number: \(randomNumber)")
                 let resultRandom = randomArray[randomNumber]
-                print(resultRandom)
                 if(resultRandom == playerMove){
-                    aiMoves(playerMove: playerMove)
+                    break label
                 }else{
                     self.gameBoard[resultRandom] = (ai?.alias)!
                     switch(resultRandom){
@@ -381,7 +341,7 @@ class GameController: UIViewController, StartGame {
             }
         }else{
             if(lookForWin(client: (ai?.alias)!)){
-                //aiWon pop up controller
+                popWinner()
             }
             //List of priorities of how the game should be played
             //Look for next move
@@ -546,9 +506,6 @@ class GameController: UIViewController, StartGame {
     }
     
     
-    
-    
-    
     func lookForSingle(){
         let randomNumber = Int(arc4random_uniform(9))
         print("Random Number: \(randomNumber)")
@@ -557,14 +514,23 @@ class GameController: UIViewController, StartGame {
                 self.gameBoard[randomNumber] = (ai?.alias)!
                 switch(randomNumber){
                 case 0: upperLeft.setImage(aiAlias, for: UIControlState.normal)
+                    break
                 case 1: up.setImage(aiAlias, for: UIControlState.normal)
+                    break
                 case 2: upperRight.setImage(aiAlias, for: UIControlState.normal)
+                    break
                 case 3: left.setImage(aiAlias, for: UIControlState.normal)
+                    break
                 case 4: middle.setImage(aiAlias, for: UIControlState.normal)
+                    break
                 case 5: right.setImage(aiAlias, for: UIControlState.normal)
+                    break
                 case 6: bottomLeft.setImage(aiAlias, for: UIControlState.normal)
+                    break
                 case 7: down.setImage(aiAlias, for: UIControlState.normal)
+                    break
                 case 8: bottomRight.setImage(aiAlias, for: UIControlState.normal)
+                    break
                 default: print("There is an error")
                     break
                 }
