@@ -23,5 +23,5 @@ protocol Actions{
 
 protocol StartGame{
     func play()
-    func gameCheck() -> Bool //See if there's a winner
+    func gameCheck(gameBoard: [String]) -> Bool //See if there's a winner
 }
