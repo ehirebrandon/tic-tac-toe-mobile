@@ -46,6 +46,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 0)//semaphores
+                    if(gameCheck(gameBoard: gameBoard)){
+                    popWinner()
+                    }
                 }
                 return
             }
@@ -62,6 +65,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 1)//semaphores
+                    if(gameCheck(gameBoard: gameBoard)){
+                        popWinner()
+                    }
                 }
                 return
             }
@@ -78,6 +84,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 2)//semaphores
+                    if(gameCheck(gameBoard: gameBoard)){
+                        popWinner()
+                    }
                 }
                 return
             }
@@ -94,6 +103,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 3)//semaphores
+                    if(gameCheck(gameBoard: gameBoard)){
+                        popWinner()
+                    }
                 }
                 return
             }
@@ -110,6 +122,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 4)//semaphores
+                    if(gameCheck(gameBoard: gameBoard)){
+                        popWinner()
+                    }
                 }
                 return
             }
@@ -126,6 +141,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 5)//semaphores
+                    if(gameCheck(gameBoard: gameBoard)){
+                        popWinner()
+                    }
                 }
                 return
             }
@@ -143,6 +161,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 6)//semaphores
+                    if(gameCheck(gameBoard: gameBoard)){
+                        popWinner()
+                    }
                 }
                 return
             }
@@ -159,6 +180,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 7)//semaphores
+                    if(gameCheck(gameBoard: gameBoard)){
+                        popWinner()
+                    }
                 }
                 return
             }
@@ -175,6 +199,9 @@ class GameController: UIViewController, StartGame {
                     print(gameCheck(gameBoard: self.gameBoard))
                     print(gameBoard)
                     waitAi(playerMove: 8)//semaphores
+                    if(gameCheck(gameBoard: gameBoard)){
+                        popWinner()
+                    }
                 }
                 return
             }
@@ -566,6 +593,15 @@ class GameController: UIViewController, StartGame {
             self.present(alertController, animated: true, completion: nil)
         }
         return bool
+    }
+    func popWinner(){
+        var bool = true
+        if (nextAlias == nil){
+            let alertController = UIAlertController(title: "AI Won!", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Darn!", style: UIAlertActionStyle.default, handler: nil))
+            bool = false
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     
