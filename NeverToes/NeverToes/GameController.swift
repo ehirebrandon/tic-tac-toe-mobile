@@ -238,6 +238,7 @@ class GameController: UIViewController, StartGame {
         
     }
     func gameCheck(gameBoard: [String]) -> Bool{
+        
         if (gameBoard[0] == gameBoard[1] && gameBoard[1] == gameBoard[2]){
             return true
         }
@@ -260,6 +261,35 @@ class GameController: UIViewController, StartGame {
             return true
         }
         if (gameBoard[2] == gameBoard[4] && gameBoard[4] == gameBoard[6]){
+            return true
+        }
+        
+        return false
+    }
+    func reverseGameCheck(gameBoard: [String]) -> Bool{
+        
+        if (gameBoard[2] == gameBoard[4] && gameBoard[4] == gameBoard[6]){
+            return true
+        }
+        if (gameBoard[0] == gameBoard[4] && gameBoard[4] == gameBoard[8]){
+            return true
+        }
+        if (gameBoard[2] == gameBoard[5] && gameBoard[5] == gameBoard[8]){
+            return true
+        }
+        if (gameBoard[1] == gameBoard[4] && gameBoard[4] == gameBoard[7]){
+            return true
+        }
+        if (gameBoard[0] == gameBoard[3] && gameBoard[3] == gameBoard[6]){
+            return true
+        }
+        if (gameBoard[6] == gameBoard[7] && gameBoard[7] == gameBoard[8]){
+            return true
+        }
+        if (gameBoard[3] == gameBoard[4] && gameBoard[4] == gameBoard[5]){
+            return true
+        }
+        if (gameBoard[0] == gameBoard[1] && gameBoard[1] == gameBoard[2]){
             return true
         }
         
@@ -330,7 +360,7 @@ class GameController: UIViewController, StartGame {
             }
             if(!lookForWin(client: (ai?.alias)!)){
                 lookForBlock()
-                lookForDouble()
+                lookForDouble(board: gameBoard)
                 lookForSingle()
             }
             
@@ -421,9 +451,94 @@ class GameController: UIViewController, StartGame {
             print("just block player")
         }
     }
-    func lookForDouble(){
+    
+    func lookForDouble(board: [String]){
+        var gameCopy = board
+        for i in 0 ..< board.count{
+            if (board[i] != player?.alias && board[i] != ai?.alias){
+                gameCopy[i] = (ai?.alias)!
+                if (gameCheck(gameBoard: gameCopy) && reverseGameCheck(gameBoard: gameCopy)){
+                    gameBoard[i] = gameCopy[i]
+                    switch(i){
+                    case 0: upperLeft.setImage(aiAlias, for: UIControlState.normal)
+                    case 1: up.setImage(aiAlias, for: UIControlState.normal)
+                    case 2: upperRight.setImage(aiAlias, for: UIControlState.normal)
+                    case 3: left.setImage(aiAlias, for: UIControlState.normal)
+                    case 4: middle.setImage(aiAlias, for: UIControlState.normal)
+                    case 5: right.setImage(aiAlias, for: UIControlState.normal)
+                    case 6: bottomLeft.setImage(aiAlias, for: UIControlState.normal)
+                    case 7: down.setImage(aiAlias, for: UIControlState.normal)
+                    case 8: bottomRight.setImage(aiAlias, for: UIControlState.normal)
+                    default: print("There is an error")
+                    }
+                    
+                }
+            }
+            break
+        }
     }
+    
+    
+    
+    
+    
+    
+    func lookForDoubleWin(board: [String]) -> Bool{
+        var checkPlayerExist = 0;
+        var aDoubleWinner = false
+        
+        for i in 0 ..< gameBoard.count{
+            if board[i] == currentPlayer!{
+                checkPlayerExist += 1
+            }
+        }
+        if checkPlayerExist < 2{
+            return false
+        }
+        else{
+            for i in 0 ..< board.count{
+                if (board[i] != player?.alias && board[i] != ai?.alias){
+                    var gameCopy = board
+                    gameCopy[i] = (ai?.alias)!
+                    if (gameCheck(gameBoard: gameCopy) && reverseGameCheck(gameBoard: gameCopy)){
+                        aDoubleWinner = true
+                        print("We have a double winning move")
+                    }
+                    
+                }
+            }
+        }
+        
+        
+        return aDoubleWinner
+    }
+    
+    
+    
+    
+    
     func lookForSingle(){
+        let randomNumber = Int(arc4random_uniform(9))
+        print("Random Number: \(randomNumber)")
+        for _ in 0 ..< gameBoard.count{
+            if (gameBoard[randomNumber] != player?.alias && gameBoard[randomNumber] != ai?.alias){
+                self.gameBoard[randomNumber] = (ai?.alias)!
+                switch(randomNumber){
+                case 0: upperLeft.setImage(aiAlias, for: UIControlState.normal)
+                case 1: up.setImage(aiAlias, for: UIControlState.normal)
+                case 2: upperRight.setImage(aiAlias, for: UIControlState.normal)
+                case 3: left.setImage(aiAlias, for: UIControlState.normal)
+                case 4: middle.setImage(aiAlias, for: UIControlState.normal)
+                case 5: right.setImage(aiAlias, for: UIControlState.normal)
+                case 6: bottomLeft.setImage(aiAlias, for: UIControlState.normal)
+                case 7: down.setImage(aiAlias, for: UIControlState.normal)
+                case 8: bottomRight.setImage(aiAlias, for: UIControlState.normal)
+                default: print("There is an error")
+                break
+                }
+            }
+        }
+        
     }
     
     func boardFirstMove() -> Bool{
