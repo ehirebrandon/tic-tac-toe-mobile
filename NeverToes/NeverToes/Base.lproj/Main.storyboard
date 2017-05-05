@@ -49,6 +49,13 @@
                                 <rect key="frame" x="197" y="532" width="62" height="60"/>
                                 <state key="normal" image="O"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg6-cT-V7d">
+                                <rect key="frame" x="8" y="97" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Nee-mJ-QHp"/>
+                                </constraints>
+                                <state key="normal" image="X"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwt-Mw-lgZ">
                                 <rect key="frame" x="272" y="532" width="62" height="60"/>
                                 <state key="normal" image="X"/>
@@ -59,15 +66,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="izk-ON-W7n">
                                         <rect key="frame" x="0.0" y="0.0" width="306" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-ro-h30">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-ro-h30" userLabel="UpperLeft">
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjX-g6-8rJ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjX-g6-8rJ" userLabel="Up">
                                                 <rect key="frame" x="122" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drB-Ep-KuG">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drB-Ep-KuG" userLabel="UpperRight">
                                                 <rect key="frame" x="244" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
                                             </button>
@@ -76,15 +83,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="dTF-Jz-sMs">
                                         <rect key="frame" x="0.0" y="120" width="306" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82h-qH-uTz">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82h-qH-uTz" userLabel="Left">
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEq-ph-GOm">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEq-ph-GOm" userLabel="Middle">
                                                 <rect key="frame" x="122" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzN-Xh-fEt">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzN-Xh-fEt" userLabel="Right">
                                                 <rect key="frame" x="244" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
                                             </button>
@@ -93,15 +100,15 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="2xt-q4-VxK">
                                         <rect key="frame" x="0.0" y="240" width="306" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Not-54-Hcf">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Not-54-Hcf" userLabel="BottomLeft">
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cX2-ch-NxG">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cX2-ch-NxG" userLabel="Down">
                                                 <rect key="frame" x="122" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKR-R3-JoD">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKR-R3-JoD" userLabel="BottomRight">
                                                 <rect key="frame" x="244" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="O"/>
                                             </button>
@@ -109,14 +116,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-9z-JtP">
+                                <rect key="frame" x="8" y="68" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jn5-a4-Tsa"/>
+                                </constraints>
+                                <state key="normal" image="O"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iUK-5H-hUV" firstAttribute="top" secondItem="f8A-eF-U1a" secondAttribute="bottom" constant="17" id="1zV-Wb-t2J"/>
+                            <constraint firstItem="SzW-F8-ieQ" firstAttribute="leading" secondItem="eg6-cT-V7d" secondAttribute="trailing" constant="-29" id="4WF-rM-i47"/>
                             <constraint firstItem="Uw1-S4-rQK" firstAttribute="top" secondItem="f8A-eF-U1a" secondAttribute="bottom" constant="37" id="5Fm-mN-Sad"/>
                             <constraint firstItem="xW0-wh-BeP" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="6U8-Zq-obw"/>
                             <constraint firstItem="3qW-BI-TdY" firstAttribute="top" secondItem="iUK-5H-hUV" secondAttribute="bottom" constant="22" id="6UI-IQ-OvQ"/>
                             <constraint firstItem="3qW-BI-TdY" firstAttribute="leading" secondItem="IGI-5z-c3U" secondAttribute="trailing" constant="15" id="818-vV-7TJ"/>
+                            <constraint firstItem="eg6-cT-V7d" firstAttribute="top" secondItem="l2c-9z-JtP" secondAttribute="bottom" constant="8" id="96U-wF-LfS"/>
+                            <constraint firstItem="l2c-9z-JtP" firstAttribute="trailing" secondItem="eg6-cT-V7d" secondAttribute="trailing" id="Bym-1C-Cnh"/>
                             <constraint firstItem="Uw1-S4-rQK" firstAttribute="centerY" secondItem="iUK-5H-hUV" secondAttribute="centerY" id="ECW-c7-LbO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IGI-5z-c3U" secondAttribute="bottom" constant="8" symbolic="YES" id="LDR-lD-jW1"/>
                             <constraint firstItem="Dwy-RO-yIX" firstAttribute="top" secondItem="SzW-F8-ieQ" secondAttribute="bottom" constant="26" id="SJW-pm-WvY"/>
@@ -125,6 +142,7 @@
                             <constraint firstItem="Dwy-RO-yIX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="WCk-bU-YkY"/>
                             <constraint firstItem="SzW-F8-ieQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XnW-x6-Wkk"/>
                             <constraint firstItem="xW0-wh-BeP" firstAttribute="top" secondItem="Dwy-RO-yIX" secondAttribute="bottom" constant="54" id="Xup-f2-qa5"/>
+                            <constraint firstItem="l2c-9z-JtP" firstAttribute="leading" secondItem="eg6-cT-V7d" secondAttribute="leading" id="eIC-Tj-AWx"/>
                             <constraint firstItem="IGI-5z-c3U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="ejE-zn-b7F"/>
                             <constraint firstItem="IGI-5z-c3U" firstAttribute="top" secondItem="3qW-BI-TdY" secondAttribute="top" id="ejX-LP-xlw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Dwy-RO-yIX" secondAttribute="trailing" constant="29" id="g0d-zy-hMP"/>
@@ -137,7 +155,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Hwt-Mw-lgZ" secondAttribute="trailing" constant="25" id="pTG-4l-PH8"/>
                             <constraint firstItem="SzW-F8-ieQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pgJ-wL-beZ"/>
                             <constraint firstItem="f8A-eF-U1a" firstAttribute="leading" secondItem="xW0-wh-BeP" secondAttribute="leading" id="qaj-Hn-HdC"/>
+                            <constraint firstItem="l2c-9z-JtP" firstAttribute="top" secondItem="SzW-F8-ieQ" secondAttribute="bottom" constant="-67" id="rFO-4Q-rOT"/>
                             <constraint firstItem="Uw1-S4-rQK" firstAttribute="trailing" secondItem="IGI-5z-c3U" secondAttribute="trailing" id="wr1-ID-NDq"/>
+                            <constraint firstItem="l2c-9z-JtP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="xiY-We-fwc"/>
                         </constraints>
                     </view>
                 </viewController>
