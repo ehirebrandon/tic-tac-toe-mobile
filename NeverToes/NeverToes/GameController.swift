@@ -44,7 +44,8 @@ class GameController: UIViewController, StartGame {
                     gameBoard[0] = currentPlayer!
                     print(gameCheck())
                     print(gameBoard)
-                    waitAi(board: gameBoard, playerMove: 0)//semaphores
+                    nextAlias = UIImage(named: (ai?.alias)!)
+                    waitAi(playerMove: 0)//semaphores
                 }
                 if (flag!){
                     waitPlayer()
@@ -66,7 +67,8 @@ class GameController: UIViewController, StartGame {
                     gameBoard[1] = currentPlayer!
                     print(gameCheck())
                     print(gameBoard)
-                    waitAi(board: gameBoard, playerMove: 1)//semaphores
+                    nextAlias = UIImage(named: (ai?.alias)!)
+                    waitAi(playerMove: 1)//semaphores
                 }
                 if (flag!){
                     waitPlayer()
@@ -85,7 +87,8 @@ class GameController: UIViewController, StartGame {
                     gameBoard[2] = currentPlayer!
                     print(gameCheck())
                     print(gameBoard)
-                    waitAi(board: gameBoard, playerMove: 2)//semaphores
+                    nextAlias = UIImage(named: (ai?.alias)!)
+                    waitAi(playerMove: 2)//semaphores
                 }
                 if (flag!){
                     waitPlayer()
@@ -104,7 +107,8 @@ class GameController: UIViewController, StartGame {
                     gameBoard[3] = currentPlayer!
                     print(gameCheck())
                     print(gameBoard)
-                    waitAi(board: gameBoard, playerMove: 3)//semaphores
+                    nextAlias = UIImage(named: (ai?.alias)!)
+                    waitAi(playerMove: 3)//semaphores
                 }
                 if (flag!){
                     waitPlayer()
@@ -123,7 +127,8 @@ class GameController: UIViewController, StartGame {
                     gameBoard[4] = currentPlayer!
                     print(gameCheck())
                     print(gameBoard)
-                    waitAi(board: gameBoard, playerMove: 4)//semaphores
+                    nextAlias = UIImage(named: (ai?.alias)!)
+                    waitAi(playerMove: 4)//semaphores
                 }
                 if (flag!){
                     waitPlayer()
@@ -142,7 +147,8 @@ class GameController: UIViewController, StartGame {
                     gameBoard[5] = currentPlayer!
                     print(gameCheck())
                     print(gameBoard)
-                    waitAi(board: gameBoard, playerMove: 5)//semaphores
+                    nextAlias = UIImage(named: (ai?.alias)!)
+                    waitAi(playerMove: 5)//semaphores
                 }
                 if (flag!){
                     waitPlayer()
@@ -162,7 +168,8 @@ class GameController: UIViewController, StartGame {
                     gameBoard[6] = currentPlayer!
                     print(gameCheck())
                     print(gameBoard)
-                    waitAi(board: gameBoard, playerMove: 6)//semaphores
+                    nextAlias = UIImage(named: (ai?.alias)!)
+                    waitAi(playerMove: 6)//semaphores
                 }
                 if (flag!){
                     waitPlayer()
@@ -181,7 +188,8 @@ class GameController: UIViewController, StartGame {
                     gameBoard[7] = currentPlayer!
                     print(gameCheck())
                     print(gameBoard)
-                    waitAi(board: gameBoard, playerMove: 7)//semaphores
+                    nextAlias = UIImage(named: (ai?.alias)!)
+                    waitAi(playerMove: 7)//semaphores
                 }
                 if (flag!){
                     waitPlayer()
@@ -200,7 +208,8 @@ class GameController: UIViewController, StartGame {
                     gameBoard[8] = currentPlayer!
                     print(gameCheck())
                     print(gameBoard)
-                    waitAi(board: gameBoard, playerMove: 8)//semaphores
+                    nextAlias = UIImage(named: (ai?.alias)!)
+                    waitAi(playerMove: 8)//semaphores
                 }
                 if (flag!){
                     waitPlayer()
@@ -293,24 +302,64 @@ class GameController: UIViewController, StartGame {
         return false
     }
     
-    func waitAi(board: [String], playerMove: Int){
+    func waitAi(playerMove: Int){
         flag = true
-        aiMoves(board: board, playerMove: playerMove)
+        aiMoves(playerMove: playerMove)
     }
     func waitPlayer(){
         flag = true
     }
     
     //ai algorithm/method of winning
-    func aiMoves(board: [String], playerMove: Int){
+    func aiMoves(playerMove: Int){
         //base condition
         if (boardFirstMove()){
-        //Case 1: If players go anywhere on [0,2,6,8] AI must go to [4]
-            if (board[playerMove] == currentPlayer){
-                
+            //Case 1: If players go anywhere on [0,2,6,8] AI must go to [4]
+            if ((playerMove == 0) || (playerMove == 2) || (playerMove == 6) || (playerMove == 8)){
+                gameBoard[4] = (ai?.alias)!
+                middle.setImage(nextAlias, for: UIControlState.normal)
             }
-        //Case 2: If players go to [4] AI must go to [0,2,6,8]
-        //Case 3: If Player -> [1,3,5,7] AI -> Anywhere
+            //Case 2: If players go to [4] AI must go to [0,2,6,8]
+            if ((playerMove == 4)){
+                let randomArray = [0,2,6,8]
+                let randomNumber = Int(arc4random_uniform(4))
+                print("Random Number: \(randomNumber)")
+                let resultRandom = randomArray[randomNumber]
+                print(resultRandom)
+                gameBoard[resultRandom] = (ai?.alias)!
+                switch(resultRandom){
+                case 0: upperLeft.setImage(nextAlias, for: UIControlState.normal)
+                case 2: upperRight.setImage(nextAlias, for: UIControlState.normal)
+                case 6: bottomLeft.setImage(nextAlias, for: UIControlState.normal)
+                case 8: bottomRight.setImage(nextAlias, for: UIControlState.normal)
+                default: print("There is an error")
+                }
+            }
+            //Case 3: If Player -> [1,3,5,7] AI -> Anywhere
+            if ((playerMove == 1) || (playerMove == 3) || (playerMove == 5) || (playerMove == 7)){
+                let randomArray = [0,1,2,3,5,6,7,8]
+                let randomNumber = Int(arc4random_uniform(8))
+                print("Random Number: \(randomNumber)")
+                let resultRandom = randomArray[randomNumber]
+                print(resultRandom)
+                if(resultRandom == playerMove){
+                    aiMoves(playerMove: playerMove)
+                }else{
+                    gameBoard[resultRandom] = (ai?.alias)!
+                    switch(resultRandom){
+                    case 0: upperLeft.setImage(nextAlias, for: UIControlState.normal)
+                    case 1: up.setImage(nextAlias, for: UIControlState.normal)
+                    case 2: upperRight.setImage(nextAlias, for: UIControlState.normal)
+                    case 3: left.setImage(nextAlias, for: UIControlState.normal)
+                    case 4: middle.setImage(nextAlias, for: UIControlState.normal)
+                    case 5: right.setImage(nextAlias, for: UIControlState.normal)
+                    case 6: bottomLeft.setImage(nextAlias, for: UIControlState.normal)
+                    case 7: down.setImage(nextAlias, for: UIControlState.normal)
+                    case 8: bottomRight.setImage(nextAlias, for: UIControlState.normal)
+                    default: print("There is an error")
+                    }
+                }
+            }
         }
     }
     // MARK: Helper Functions
