@@ -527,18 +527,10 @@ class GameController: UIViewController, StartGame {
                       "6","7","8"]
     }
     func scoreReset(){
-        playerAlias = nil
-        aiAlias = nil
         aiWin.text = "\(0)"
         aiLose.text = "\(0)"
         playerWin.text = "\(0)"
         playerLose.text = "\(0)"
-        player = nil
-        ai = nil
-        flag = false
-        gameBoard =  ["0","1","2",
-                      "3","4","5",
-                      "6","7","8"]
     }
     
     
