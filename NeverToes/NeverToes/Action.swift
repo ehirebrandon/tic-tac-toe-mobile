@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol Actions{
     // AI & Players should be able to both do this
@@ -22,6 +23,6 @@ protocol Actions{
 }
 
 protocol StartGame{
-    func play()
+    func play(openMove: UIButton, openSlot: Int)
     func gameCheck(gameBoard: [String]) -> Bool //See if there's a winner
 }

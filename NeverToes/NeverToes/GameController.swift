@@ -17,7 +17,7 @@ class GameController: UIViewController, StartGame {
     
     fileprivate let aX = UIImage(named: "X")!
     fileprivate let aO = UIImage(named: "O")!
-    fileprivate var nextAlias: UIImage?
+    fileprivate var playerAlias: UIImage?
     fileprivate var aiAlias: UIImage?
     fileprivate var currentPlayer: String?
     fileprivate var flag: Bool?
@@ -38,139 +38,40 @@ class GameController: UIViewController, StartGame {
     // Board Actions & Outlets
     @IBOutlet weak var upperLeft: UIButton!
     @IBAction func upperLeft(_ sender: Any) {
-        if(checkSelect()){
-            guard((upperLeft.currentImage?.isEqual(aX))! || (upperLeft.currentImage?.isEqual(aO))!) else{
-                if (!flag!){
-                    upperLeft.setImage(nextAlias, for: UIControlState.normal)
-                    gameBoard[0] = currentPlayer!
-                    print(gameCheck(gameBoard: self.gameBoard))
-                    print(gameBoard)
-                    waitAi(playerMove: 0)//semaphores
-                }
-                return
-            }
-        }
+     play(openMove: upperLeft, openSlot: 0)
     }
     @IBOutlet weak var up: UIButton!
     @IBAction func up(_ sender: Any) {
-        if(checkSelect()){
-            guard((up.currentImage?.isEqual(aX))! || (up.currentImage?.isEqual(aO))!) else{
-                if (!flag!){
-                    up.setImage(nextAlias, for: UIControlState.normal)
-                    gameBoard[1] = currentPlayer!
-                    print(gameCheck(gameBoard: self.gameBoard))
-                    print(gameBoard)
-                    waitAi(playerMove: 1)//semaphores
-                }
-                return
-            }
-        }
+     play(openMove: up, openSlot: 1)
     }
     @IBOutlet weak var upperRight: UIButton!
     @IBAction func upperRight(_ sender: Any) {
-        if(checkSelect()){
-            guard((upperRight.currentImage?.isEqual(aX))! || (upperRight.currentImage?.isEqual(aO))!) else{
-                if (!flag!){
-                    upperRight.setImage(nextAlias, for: UIControlState.normal)
-                    gameBoard[2] = currentPlayer!
-                    print(gameCheck(gameBoard: self.gameBoard))
-                    print(gameBoard)
-                    waitAi(playerMove: 2)//semaphores
-                }
-                return
-            }
-        }
+      play(openMove: upperRight, openSlot: 2)
     }
     @IBOutlet weak var left: UIButton!
     @IBAction func left(_ sender: Any) {
-        if(checkSelect()){
-            guard((left.currentImage?.isEqual(aX))! || (left.currentImage?.isEqual(aO))!) else{
-                if (!flag!){
-                    left.setImage(nextAlias, for: UIControlState.normal)
-                    gameBoard[3] = currentPlayer!
-                    print(gameCheck(gameBoard: self.gameBoard))
-                    print(gameBoard)
-                    waitAi(playerMove: 3)//semaphores
-                }
-                return
-            }
-        }
+    play(openMove: left, openSlot: 3)
     }
     @IBOutlet weak var middle: UIButton!
     @IBAction func middle(_ sender: Any) {
-        if(checkSelect()){
-            guard((middle.currentImage?.isEqual(aX))! || (middle.currentImage?.isEqual(aO))!) else{
-                if (!flag!){
-                    middle.setImage(nextAlias, for: UIControlState.normal)
-                    gameBoard[4] = currentPlayer!
-                    print(gameCheck(gameBoard: self.gameBoard))
-                    print(gameBoard)
-                    waitAi(playerMove: 4)//semaphores
-                }
-                return
-            }
-        }
+       play(openMove: middle, openSlot: 4)
     }
     @IBOutlet weak var right: UIButton!
     @IBAction func right(_ sender: Any) {
-        if(checkSelect()){
-            guard((right.currentImage?.isEqual(aX))! || (right.currentImage?.isEqual(aO))!) else{
-                if (!flag!){
-                    right.setImage(nextAlias, for: UIControlState.normal)
-                    gameBoard[5] = currentPlayer!
-                    print(gameCheck(gameBoard: self.gameBoard))
-                    print(gameBoard)
-                    waitAi(playerMove: 5)//semaphores
-                }
-                return
-            }
-        }
+     play(openMove: right, openSlot: 5)
     }
     @IBOutlet weak var bottomLeft: UIButton!
     
     @IBAction func bottomLeft(_ sender: Any) {
-        if(checkSelect()){
-            guard((bottomLeft.currentImage?.isEqual(aX))! || (bottomLeft.currentImage?.isEqual(aO))!) else{
-                if (!flag!){
-                    bottomLeft.setImage(nextAlias, for: UIControlState.normal)
-                    gameBoard[6] = currentPlayer!
-                    print(gameCheck(gameBoard: self.gameBoard))
-                    print(gameBoard)
-                    waitAi(playerMove: 6)//semaphores
-                }
-                return
-            }
-        }
+      play(openMove: bottomLeft, openSlot: 6)
     }
     @IBOutlet weak var down: UIButton!
     @IBAction func down(_ sender: Any) {
-        if(checkSelect()){
-            guard((down.currentImage?.isEqual(aX))! || (down.currentImage?.isEqual(aO))!) else{
-                if (!flag!){
-                    down.setImage(nextAlias, for: UIControlState.normal)
-                    gameBoard[7] = currentPlayer!
-                    print(gameCheck(gameBoard: self.gameBoard))
-                    print(gameBoard)
-                    waitAi(playerMove: 7)//semaphores
-                }
-                return
-            }
-        }
+      play(openMove: down, openSlot: 7)
     }
     @IBOutlet weak var bottomRight: UIButton!
     @IBAction func bottomRight(_ sender: Any) {
-        if(checkSelect()){
-            guard((bottomRight.currentImage?.isEqual(aX))! || (bottomRight.currentImage?.isEqual(aO))!) else{
-                if (!flag!){
-                    bottomRight.setImage(nextAlias, for: UIControlState.normal)
-                    gameBoard[8] = currentPlayer!
-                    print(gameCheck(gameBoard: self.gameBoard))
-                    print(gameBoard)
-                    waitAi(playerMove: 8)//semaphores
-                }
-                return
-            }
-        }
+      play(openMove: bottomRight, openSlot: 8)
     }
     // Select & Re-[Set/Start] buttons
     @IBOutlet weak var selectO: UIButton!
@@ -179,7 +80,7 @@ class GameController: UIViewController, StartGame {
             player = Player(alias: "O", win: 0, lose: 0)
             ai = AI(alias: "X", win: 0, lose: 0)
         }
-        nextAlias = aO
+        playerAlias = aO
         aiAlias = aX
         currentPlayer = player?.alias
         selectX.setImage(aX.dim(by: 0.5), for: UIControlState.normal)
@@ -194,7 +95,7 @@ class GameController: UIViewController, StartGame {
             ai = AI(alias: "O", win: 0, lose: 0)
         }
         currentPlayer = player?.alias
-        nextAlias = aX
+        playerAlias = aX
         aiAlias = aO
         selectO.setImage(aO.dim(by: 0.5), for: UIControlState.normal)
         selectX.setImage(aX, for: UIControlState.normal)
@@ -223,7 +124,19 @@ class GameController: UIViewController, StartGame {
     }
     
     // MARK: Conformance >> StartGame
-    func play(){
+    func play(openMove: UIButton, openSlot: Int){
+        if(checkSelect()){
+            guard((openMove.currentImage?.isEqual(aX))! || (openMove.currentImage?.isEqual(aO))!) else{
+                if (!flag!){
+                    openMove.setImage(playerAlias, for: UIControlState.normal)
+                    gameBoard[openSlot] = currentPlayer!
+                    print(gameCheck(gameBoard: self.gameBoard))
+                    print(gameBoard)
+                    waitAi(playerMove: openSlot)//semaphores
+                }
+                return
+            }
+        }
     }
     
     func gameCheck(gameBoard: [String]) -> Bool{
@@ -328,13 +241,13 @@ class GameController: UIViewController, StartGame {
                     switch(resultRandom){
                     case 0: upperLeft.setImage(aiAlias, for: UIControlState.normal)
                     case 1: up.setImage(aiAlias, for: UIControlState.normal)
-                    case 2: upperRight.setImage(nextAlias, for: UIControlState.normal)
+                    case 2: upperRight.setImage(playerAlias, for: UIControlState.normal)
                     case 3: left.setImage(aiAlias, for: UIControlState.normal)
                     case 4: middle.setImage(aiAlias, for: UIControlState.normal)
                     case 5: right.setImage(aiAlias, for: UIControlState.normal)
                     case 6: bottomLeft.setImage(aiAlias, for: UIControlState.normal)
                     case 7: down.setImage(aiAlias, for: UIControlState.normal)
-                    case 8: bottomRight.setImage(nextAlias, for: UIControlState.normal)
+                    case 8: bottomRight.setImage(playerAlias, for: UIControlState.normal)
                     default: print("There is an error")
                     }
                 }
@@ -381,14 +294,23 @@ class GameController: UIViewController, StartGame {
                             gameBoard[i] = (ai?.alias)!
                             switch(i){
                             case 0: upperLeft.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 1: up.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 2: upperRight.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 3: left.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 4: middle.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 5: right.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 6: bottomLeft.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 7: down.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             case 8: bottomRight.setImage(aiAlias, for: UIControlState.normal)
+                                break
                             default: print("There is an error")
                             }
                         }
@@ -459,14 +381,23 @@ class GameController: UIViewController, StartGame {
                     gameBoard[i] = gameCopy[i]
                     switch(i){
                     case 0: upperLeft.setImage(aiAlias, for: UIControlState.normal)
+                        break
                     case 1: up.setImage(aiAlias, for: UIControlState.normal)
+                        break
                     case 2: upperRight.setImage(aiAlias, for: UIControlState.normal)
+                        break
                     case 3: left.setImage(aiAlias, for: UIControlState.normal)
+                        break
                     case 4: middle.setImage(aiAlias, for: UIControlState.normal)
+                        break
                     case 5: right.setImage(aiAlias, for: UIControlState.normal)
+                        break
                     case 6: bottomLeft.setImage(aiAlias, for: UIControlState.normal)
+                        break
                     case 7: down.setImage(aiAlias, for: UIControlState.normal)
+                        break
                     case 8: bottomRight.setImage(aiAlias, for: UIControlState.normal)
+                        break
                     default: print("There is an error")
                     }
                 }
@@ -557,7 +488,7 @@ class GameController: UIViewController, StartGame {
     
     func checkSelect()-> Bool{
         var bool = true
-        if (nextAlias == nil){
+        if (playerAlias == nil){
             let alertController = UIAlertController(title: "Hey!", message: "Please select an alias to start", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
             bool = false
@@ -567,7 +498,7 @@ class GameController: UIViewController, StartGame {
     }
     func popWinner(){
         var bool = true
-        if (nextAlias == nil){
+        if (playerAlias == nil){
             let alertController = UIAlertController(title: "AI Won!", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Darn!", style: UIAlertActionStyle.default, handler: nil))
             bool = false
@@ -586,7 +517,7 @@ class GameController: UIViewController, StartGame {
         bottomLeft.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
         down.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
         bottomRight.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-        nextAlias = nil
+        playerAlias = nil
         aiAlias = nil
         player = nil
         ai = nil
@@ -596,7 +527,7 @@ class GameController: UIViewController, StartGame {
                       "6","7","8"]
     }
     func scoreReset(){
-        nextAlias = nil
+        playerAlias = nil
         aiAlias = nil
         aiWin.text = "\(0)"
         aiLose.text = "\(0)"
