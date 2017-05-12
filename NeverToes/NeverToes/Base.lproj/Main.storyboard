@@ -235,7 +235,7 @@
                     </view>
                     <connections>
                         <outlet property="aiIcon" destination="l2c-9z-JtP" id="Dbs-tz-Uk1"/>
-                        <outlet property="aiLose" destination="Ffn-b2-oMm" id="XgL-BN-Fmu"/>
+                        <outlet property="aiLoss" destination="Ffn-b2-oMm" id="Fda-3l-UW6"/>
                         <outlet property="aiWin" destination="e27-IN-urc" id="DUt-4Z-8nl"/>
                         <outlet property="bottomLeft" destination="Not-54-Hcf" id="Wjc-dd-Ccf"/>
                         <outlet property="bottomRight" destination="nKR-R3-JoD" id="xFU-yf-7Aa"/>
@@ -243,7 +243,7 @@
                         <outlet property="left" destination="82h-qH-uTz" id="fRC-a1-Ygw"/>
                         <outlet property="middle" destination="UEq-ph-GOm" id="vOH-LU-lbE"/>
                         <outlet property="playerIcon" destination="eg6-cT-V7d" id="mqq-cu-77p"/>
-                        <outlet property="playerLose" destination="rAi-dN-SE0" id="5cQ-MK-17T"/>
+                        <outlet property="playerLoss" destination="rAi-dN-SE0" id="xfs-GM-Maw"/>
                         <outlet property="playerWin" destination="pjf-48-sH0" id="s9b-pU-RO9"/>
                         <outlet property="right" destination="LzN-Xh-fEt" id="rGi-s1-d7n"/>
                         <outlet property="selectO" destination="iUK-5H-hUV" id="b4k-yV-PUG"/>

@@ -7,16 +7,30 @@
 //
 
 import Foundation
+import UIKit
 
 class Player{
     var alias: String?
-    var win: Int?
-    var lose: Int?
     
-    init(alias: String, win: Int, lose: Int){
+    var win: Int{
+        get{
+            return self.win
+        }
+        set{
+        }
+    }
+    var loss: Int{
+        get{
+            return self.loss
+        }
+        set{
+        }
+    }
+    
+    init(alias: String, win: Int, loss: Int){
         self.alias = alias
         self.win = win
-        self.lose = lose
+        self.loss = loss
     }
     
 }

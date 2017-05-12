@@ -9,20 +9,15 @@
 import Foundation
 import UIKit
 
-protocol Actions{
-    // AI & Players should be able to both do this
-    // Set a move
-    func setMove() throws
-    // Have an alias
-    func setAlias()
-    // Keep count of win and loses
-    func updateScore()
-    // wait for other player to finish turn
-    func wait()
-    
-}
 
 protocol StartGame{
     func play(openMove: UIButton, openSlot: Int)
-    func gameCheck(gameBoard: [String]) -> Bool //See if there's a winner
+    func makeWin(client: String, currentPlayer: String)
+    func makeDouble(board: [String])
+    func makeSingle()
+    func aiMoves(playerMove: Int) throws
+    func checkSelect()-> Bool
+    func clearBoard()
+    func scoreReset()
 }
+
