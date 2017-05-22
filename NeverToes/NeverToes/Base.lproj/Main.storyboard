@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game Controller-->
+        <!--Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameController" customModule="NeverToes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TTTController" customModule="NeverToes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,14 +35,14 @@
                                 <rect key="frame" x="24" y="614" width="148" height="45"/>
                                 <state key="normal" title="Button" image="Restart"/>
                                 <connections>
-                                    <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YyP-ix-baf"/>
+                                    <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bPp-M7-UbO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-BI-TdY">
                                 <rect key="frame" x="187" y="614" width="161" height="45"/>
                                 <state key="normal" image="Reset"/>
                                 <connections>
-                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vjt-gz-nvn"/>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iaX-TS-prn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select to Start:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uw1-S4-rQK">
@@ -55,7 +55,7 @@
                                 <rect key="frame" x="197" y="532" width="62" height="60"/>
                                 <state key="normal" image="O"/>
                                 <connections>
-                                    <action selector="selectO:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pZs-E4-VhO"/>
+                                    <action selector="selectO:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FTr-K9-Z0d"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-9z-JtP">
@@ -76,7 +76,7 @@
                                 <rect key="frame" x="272" y="532" width="62" height="60"/>
                                 <state key="normal" image="X"/>
                                 <connections>
-                                    <action selector="selectX:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DzQ-eq-zwY"/>
+                                    <action selector="selectX:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tRY-cC-R13"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="Dwy-RO-yIX">
@@ -89,21 +89,21 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="Empty"/>
                                                 <connections>
-                                                    <action selector="upperLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TeM-pU-Ugj"/>
+                                                    <action selector="upperLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="emt-6W-JRW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjX-g6-8rJ" userLabel="Up">
                                                 <rect key="frame" x="122" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="Empty"/>
                                                 <connections>
-                                                    <action selector="up:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kwC-XG-awa"/>
+                                                    <action selector="up:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4PX-dr-fht"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drB-Ep-KuG" userLabel="UpperRight">
                                                 <rect key="frame" x="244" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="Empty"/>
                                                 <connections>
-                                                    <action selector="upperRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fC-84-YF6"/>
+                                                    <action selector="upperRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PQM-Bd-aLf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -115,21 +115,21 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="Empty"/>
                                                 <connections>
-                                                    <action selector="left:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Ao-Th-Rmi"/>
+                                                    <action selector="left:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hjw-jA-Pn0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEq-ph-GOm" userLabel="Middle">
                                                 <rect key="frame" x="122" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="Empty"/>
                                                 <connections>
-                                                    <action selector="middle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pgq-8h-Es3"/>
+                                                    <action selector="middle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CvP-T9-5ko"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzN-Xh-fEt" userLabel="Right">
                                                 <rect key="frame" x="244" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="Empty"/>
                                                 <connections>
-                                                    <action selector="right:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Not-RH-oeV"/>
+                                                    <action selector="right:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQS-fU-GBK"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -141,21 +141,21 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="Empty"/>
                                                 <connections>
-                                                    <action selector="bottomLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HfJ-ue-AVf"/>
+                                                    <action selector="bottomLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ohO-sC-En7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cX2-ch-NxG" userLabel="Down">
                                                 <rect key="frame" x="122" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="Empty"/>
                                                 <connections>
-                                                    <action selector="down:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SZ3-u4-Uf4"/>
+                                                    <action selector="down:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DFz-KT-T2R"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKR-R3-JoD" userLabel="BottomRight">
                                                 <rect key="frame" x="244" y="0.0" width="62" height="60"/>
                                                 <state key="normal" image="Empty"/>
                                                 <connections>
-                                                    <action selector="bottomRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4vz-x8-N4F"/>
+                                                    <action selector="bottomRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2p-Nl-tKf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -234,23 +234,23 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="aiIcon" destination="l2c-9z-JtP" id="Dbs-tz-Uk1"/>
-                        <outlet property="aiLoss" destination="Ffn-b2-oMm" id="Fda-3l-UW6"/>
-                        <outlet property="aiWin" destination="e27-IN-urc" id="DUt-4Z-8nl"/>
-                        <outlet property="bottomLeft" destination="Not-54-Hcf" id="Wjc-dd-Ccf"/>
-                        <outlet property="bottomRight" destination="nKR-R3-JoD" id="xFU-yf-7Aa"/>
-                        <outlet property="down" destination="cX2-ch-NxG" id="ZXQ-Og-Vp5"/>
-                        <outlet property="left" destination="82h-qH-uTz" id="fRC-a1-Ygw"/>
-                        <outlet property="middle" destination="UEq-ph-GOm" id="vOH-LU-lbE"/>
-                        <outlet property="playerIcon" destination="eg6-cT-V7d" id="mqq-cu-77p"/>
-                        <outlet property="playerLoss" destination="rAi-dN-SE0" id="xfs-GM-Maw"/>
-                        <outlet property="playerWin" destination="pjf-48-sH0" id="s9b-pU-RO9"/>
-                        <outlet property="right" destination="LzN-Xh-fEt" id="rGi-s1-d7n"/>
-                        <outlet property="selectO" destination="iUK-5H-hUV" id="b4k-yV-PUG"/>
-                        <outlet property="selectX" destination="Hwt-Mw-lgZ" id="CKI-5H-sRU"/>
-                        <outlet property="up" destination="GjX-g6-8rJ" id="sh4-hA-g9z"/>
-                        <outlet property="upperLeft" destination="pbb-ro-h30" id="UVe-7f-IBv"/>
-                        <outlet property="upperRight" destination="drB-Ep-KuG" id="hSf-kO-9oz"/>
+                        <outlet property="aiIcon" destination="l2c-9z-JtP" id="URp-ed-z4s"/>
+                        <outlet property="aiLoss" destination="Ffn-b2-oMm" id="Iba-1k-9AE"/>
+                        <outlet property="aiWin" destination="e27-IN-urc" id="hH5-UB-eUb"/>
+                        <outlet property="bottomLeft" destination="Not-54-Hcf" id="Sed-lQ-FBu"/>
+                        <outlet property="bottomRight" destination="nKR-R3-JoD" id="jlG-dU-xdV"/>
+                        <outlet property="down" destination="cX2-ch-NxG" id="Nn2-fY-rAT"/>
+                        <outlet property="left" destination="82h-qH-uTz" id="ymx-Nq-KPg"/>
+                        <outlet property="middle" destination="UEq-ph-GOm" id="nkM-00-Ngg"/>
+                        <outlet property="playerIcon" destination="eg6-cT-V7d" id="0ps-tQ-cGc"/>
+                        <outlet property="playerLoss" destination="rAi-dN-SE0" id="TMh-Zf-SIX"/>
+                        <outlet property="playerWin" destination="pjf-48-sH0" id="KYp-MV-VeQ"/>
+                        <outlet property="right" destination="LzN-Xh-fEt" id="hji-yo-Vre"/>
+                        <outlet property="selectO" destination="iUK-5H-hUV" id="QKl-A5-3WK"/>
+                        <outlet property="selectX" destination="Hwt-Mw-lgZ" id="jys-NZ-tSM"/>
+                        <outlet property="up" destination="GjX-g6-8rJ" id="Us7-Ra-sAh"/>
+                        <outlet property="upperLeft" destination="pbb-ro-h30" id="qyl-xW-7Ou"/>
+                        <outlet property="upperRight" destination="drB-Ep-KuG" id="Mmc-pj-9dU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

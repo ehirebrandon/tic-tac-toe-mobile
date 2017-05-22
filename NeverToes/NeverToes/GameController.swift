@@ -10,6 +10,8 @@ import UIKit
 
 class GameController: UIViewController, StartGame{
     
+    //This can be updated by the ai/player Model
+    
     @IBOutlet weak var aiWin: UILabel!
     @IBOutlet weak var aiLoss: UILabel!
     @IBOutlet weak var playerWin: UILabel!
@@ -18,20 +20,18 @@ class GameController: UIViewController, StartGame{
     var game: Game?
     
     fileprivate var player: Player?
-    fileprivate var ai: AI?
-    
-    fileprivate let aX = UIImage(named: "X")!
-    fileprivate let aO = UIImage(named: "O")!
-    
     fileprivate var playerAlias: UIImage?
+    
+    fileprivate var ai: AI?
     fileprivate var aiAlias: UIImage?
     
+    fileprivate let imageX = UIImage(named: "X")!
+    fileprivate let imageO = UIImage(named: "O")!
+
     fileprivate var currentPlayer: String?
+    
     fileprivate var flag = false
     fileprivate var gameStop: Bool?
-    
- 
-    
     
     // AI & Player Icons Actions & Outlets
     @IBOutlet weak var aiIcon: UIButton!
@@ -78,37 +78,11 @@ class GameController: UIViewController, StartGame{
     // Select & Re-[Set/Start] buttons
     @IBOutlet weak var selectO: UIButton!
     @IBAction func selectO(_ sender: Any) {
-        if (player == nil && aiWin.text == "\(0)" && aiLoss.text == "\(0)" && playerWin.text == "\(0)" && playerLoss.text == "\(0)") {
-            player = Player(alias: "O", win: 0, loss: 0)
-            ai = AI(alias: "X", win: 0, loss: 0)
-        }
-        playerAlias = aO
-        aiAlias = aX
-        
-        currentPlayer = player?.alias
-        
-        selectX.setImage(aX.dim(by: 0.5), for: UIControlState.normal)
-        selectO.setImage(aO, for: UIControlState.normal)
-        
-        self.playerIcon.setImage(aO, for: UIControlState.normal)
-        self.aiIcon.setImage(aX, for: UIControlState.normal)
-        
-        self.game = Game(ai: self.ai!, player: self.player!)
+      selectAlias(playerAlias: "O", aiAlias: "X")
     }
     @IBOutlet weak var selectX: UIButton!
     @IBAction func selectX(_ sender: Any) {
-        if (player == nil && aiWin.text == "\(0)" && aiLoss.text == "\(0)" && playerWin.text == "\(0)" && playerLoss.text == "\(0)"){
-            player = Player(alias: "X", win: 0, loss: 0)
-            ai = AI(alias: "O", win: 0, loss: 0)
-        }
-        currentPlayer = player?.alias
-        playerAlias = aX
-        aiAlias = aO
-        selectO.setImage(aO.dim(by: 0.5), for: UIControlState.normal)
-        selectX.setImage(aX, for: UIControlState.normal)
-        self.playerIcon.setImage(aX, for: UIControlState.normal)
-        self.aiIcon.setImage(aO, for: UIControlState.normal)
-        self.game = Game(ai: self.ai!, player: self.player!)
+      selectAlias(playerAlias: "X", aiAlias: "O")
     }
     @IBAction func restart(_ sender: Any) {
         clearBoard()
@@ -122,6 +96,10 @@ class GameController: UIViewController, StartGame{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        game?.minimax(game: (game?.gameBoard)!, opponent: self.ai!)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -129,10 +107,41 @@ class GameController: UIViewController, StartGame{
         // Dispose of any resources that can be recreated.
     }
     
+    //Quick Helper
+    func selectAlias(playerAlias: String, aiAlias: String){
+        if(self.player == nil || self.ai == nil){
+            self.player = Player(alias: playerAlias, win: 0, loss: 0)
+            self.ai = AI(alias: aiAlias, win: 0, loss: 0)
+        }
+        
+        currentPlayer = playerAlias
+        
+        
+        
+        switch(playerAlias){
+        case "X": self.playerAlias = imageX
+                  self.aiAlias = imageO
+                  selectO.isEnabled = false
+                  self.playerIcon.setImage(imageX, for: UIControlState.normal)
+                  self.aiIcon.setImage(imageO, for: UIControlState.normal)
+            break
+        case "O": self.playerAlias = imageO
+                  self.aiAlias = imageX
+                  selectX.isEnabled = false
+                  self.playerIcon.setImage(imageO, for: UIControlState.normal)
+                  self.aiIcon.setImage(imageX, for: UIControlState.normal)
+            break
+        default: break
+        }
+
+        self.game = Game(ai: self.ai!, player: self.player!)
+  
+    }
+    
     // MARK: Conformance >> StartGame
     func play(openMove: UIButton, openSlot: Int){
         if(checkSelect()){
-            guard((openMove.currentImage?.isEqual(aX))! || (openMove.currentImage?.isEqual(aO))!) else{
+            guard((openMove.currentImage?.isEqual(imageX))! || (openMove.currentImage?.isEqual(imageO))!) else{
                 if (!flag){
                     openMove.setImage(playerAlias, for: UIControlState.normal)
                     game?.gameBoard[openSlot] = currentPlayer!
@@ -271,7 +280,7 @@ class GameController: UIViewController, StartGame{
                     default: print("There is an error")
                         break
                     }
-                break
+                    break
                 }
             }
             
@@ -301,7 +310,7 @@ class GameController: UIViewController, StartGame{
                     default: print("There is an error")
                         break
                     }
-                break
+                    break
                 }
             }
             break
@@ -313,7 +322,6 @@ class GameController: UIViewController, StartGame{
     
     func makeDouble(board: [String]){
         
-    
         for i in 0 ..< board.count - 1{
             let gameCopy = board
             if (board[i] != player?.alias && board[i] != ai?.alias){
@@ -422,23 +430,23 @@ class GameController: UIViewController, StartGame{
     
     //User test: Pass | Unit Test: None
     func clearBoard(){
-                upperLeft.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-                up.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-                upperRight.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-                left.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-                middle.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-                right.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-                bottomLeft.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-                down.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-                bottomRight.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-                playerAlias = nil
-                aiAlias = nil
-                player = nil
-                ai = nil
-                flag = false
-                game?.gameBoard =  ["0","1","2",
-                                   "3","4","5",
-                                   "6","7","8"]
+        upperLeft.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
+        up.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
+        upperRight.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
+        left.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
+        middle.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
+        right.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
+        bottomLeft.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
+        down.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
+        bottomRight.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
+        playerAlias = nil
+        aiAlias = nil
+        player = nil
+        ai = nil
+        flag = false
+        game?.gameBoard =  ["0","1","2",
+                            "3","4","5",
+                            "6","7","8"]
     }
     //User test: Pass | Unit Test: None
     func scoreReset(){

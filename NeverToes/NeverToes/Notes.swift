@@ -42,6 +42,12 @@
 //Case 1: Board is occupied by AI on 4 and Player on any of the corner
 //
 
+//-------------------------POST PROJECT UPDATES ------------------------
+// I've decided to come back to this project on May 22, 2017 to update the project using an algorithm call minimax.
+// In addition, I am turning the project from more of an object oriented design to Protocol-Oriented-Design more of the Apple's way of doing thing
+//The project is not whole, but near completion, Algorithm is partially working properly as it does its recurssion, but is not accurately making the optimal move yet. Therefore, functions for updating scores and what not is not updated. 
+
+
 
 
 

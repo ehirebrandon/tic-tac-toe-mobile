@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 
 class Player{
-    var alias: String?
+    
+    var artificial: Bool = false
+    
+    var alias: Int
+    
+    var opponent: Player?
     
     var win: Int{
         get{
@@ -27,10 +32,12 @@ class Player{
         }
     }
     
-    init(alias: String, win: Int, loss: Int){
+    init(alias: Int, win: Int, loss: Int){
         self.alias = alias
         self.win = win
         self.loss = loss
     }
+
+
     
 }

@@ -9,28 +9,11 @@
 import Foundation
 import UIKit
 
-struct AI{
-    var alias: String?
+class AI: Player{
     
-    var win: Int{
-        get{
-            return self.win
-        }
-        set{
-        }
-    }
-    var loss: Int{
-        get{
-            return self.loss
-        }
-        set{
-        }
+    override init(alias: Int, win: Int, loss: Int){
+        super.init(alias: alias, win: win, loss: loss)
+        artificial = true
     }
     
-    init(alias: String, win: Int, loss: Int){
-        self.alias = alias
-        self.win = win
-        self.loss = loss
-    }
-
 }
