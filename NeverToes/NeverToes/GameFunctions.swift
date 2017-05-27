@@ -16,13 +16,6 @@ protocol GameFunctions{
     //1. Be able to select Cross or Circle as a player Alias
     func selectAlias(playerAlias: Int, aiAlias: Int)
     
-    //2. Once Selected, check if this is the first move play
-    func boardFirstMove() -> Bool
-    
-    
-    //3. Then check to see if the position chosen has been occupied
-    func checkSelect() -> Bool
-    
     //4. Make the play with player turn
     func play(openMove: UIButton, row: Int, column: Int)
     
@@ -34,9 +27,22 @@ protocol GameFunctions{
     
     //7. Check For winner and pop up winner
     
+}
 
+protocol GameChecks{
+    
+    //2. Once Selected, check if this is the first move play
+    func boardFirstMove() -> Bool
+    
+    //3. Then check to see if the position chosen has been occupied
+    func checkSelect() -> Bool
+}
+
+
+protocol Resets{
     
     //Last: Reset the game
+    
     func clearBoard()
     func scoreReset()
 }

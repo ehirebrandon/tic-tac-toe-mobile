@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TTTController: UIViewController, GameFunctions{
+class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     
     //This can be updated by the ai/player Model
     
@@ -132,9 +132,6 @@ class TTTController: UIViewController, GameFunctions{
     func waitAi(){
         flag = true //Flag Up
         let spot: RowColumn =  try! self.game!.aiBestMove()
-        print(spot)
-        print(spot.row ?? -2)
-        print(spot.column ?? -2)
         let space = game?.board.getSpot(row: spot.row!, column: spot.column!)
         print("space:\(space!)")
         switch(space!){
