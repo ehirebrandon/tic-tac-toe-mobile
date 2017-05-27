@@ -11,7 +11,6 @@ import UIKit
 
 struct GameBoard: BoardMoves{
 
-    
     var boardSpace = [-1,-2,-3,-4,-5,-6,-7,-8]
     
     //var boardSpace: [Int] = {

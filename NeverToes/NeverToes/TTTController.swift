@@ -10,13 +10,6 @@ import UIKit
 
 class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     
-    //This can be updated by the ai/player Model
-    
-    @IBOutlet weak var aiWin: UILabel!
-    @IBOutlet weak var aiLoss: UILabel!
-    @IBOutlet weak var playerWin: UILabel!
-    @IBOutlet weak var playerLoss: UILabel!
-    
     fileprivate var game: TTT?
     
     fileprivate var player: Player?
@@ -28,11 +21,15 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     fileprivate let imageX = UIImage(named: "X")!
     fileprivate let imageO = UIImage(named: "O")!
     
-    fileprivate var currentPlayer: Int?
-    fileprivate var currentAi: Int?
-    
     fileprivate var flag = false
     fileprivate var gameStop: Bool?
+    
+    //This can be updated by the ai/player Model
+    @IBOutlet weak var aiWin: UILabel!
+    @IBOutlet weak var aiLoss: UILabel!
+    @IBOutlet weak var playerWin: UILabel!
+    @IBOutlet weak var playerLoss: UILabel!
+    
     
     // AI & Player Icons Actions & Outlets
     @IBOutlet weak var aiIcon: UIButton!
@@ -93,21 +90,20 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
         clearBoard()
     }
     
-    
-    //MARK: START & LOADS ----------------------------------------------------------------------
+    //MARK: START & LOADS ///////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     func selectAlias(playerAlias: Int, aiAlias: Int){
+        if(game?.player == nil || game?.ai == nil){
+        }
         if(self.player == nil || self.ai == nil){
             self.player = Player(alias: playerAlias, win: 0, loss: 0)
             self.ai = AI(alias: aiAlias, win: 0, loss: 0)
         }
-        currentPlayer = playerAlias
-        currentAi = aiAlias
-        
         switch(playerAlias){
         case 1: self.playerAlias = imageX
         self.aiAlias = imageO
@@ -124,16 +120,21 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
         default: break
         }
         
-        self.game = TTT(ai: self.ai!, player: self.player!) 
+        self.game = TTT(ai: self.ai!, player: self.player!)
+        game?.currentPlayer = playerAlias
+        game?.currentAI = aiAlias
         
     }
     
     // Semaphores
     func waitAi(){
+        
         flag = true //Flag Up
+        
         let spot: RowColumn =  try! self.game!.aiBestMove()
         let space = game?.board.getSpot(row: spot.row!, column: spot.column!)
         print("space:\(space!)")
+        
         switch(space!){
         case 0: play(openMove: upperLeft, row: spot.row!, column: spot.row!)
             break
@@ -155,6 +156,7 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
             break
         default: break
         }
+        
         flag = false //Flag Down
     }
     
@@ -163,11 +165,11 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     func boardFirstMove() -> Bool{
         var playerExist = 0
         for i in 0 ... Int((game?.board.boardSpace.count)!){
-            if game?.board.boardSpace[i] == currentPlayer!{
+            if game?.board.boardSpace[i] == game?.currentPlayer{
                 playerExist += 1
             }
         }
-        if playerExist == 1{
+        if playerExist <= 1{
             return true
         }else{
             return false
@@ -189,7 +191,6 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     //MARK: NotificationS
     func popWinner(){
         print("You are a WINNER!")
-        
         let alertController = UIAlertController(title: "AI Won!", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Darn!", style: UIAlertActionStyle.default, handler: nil))
         
@@ -199,21 +200,18 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     //MARK: Re-Settings
     //User test: Pass | Unit Test: None
     func clearBoard(){
-        upperLeft.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-        up.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-        upperRight.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-        left.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-        middle.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-        right.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-        bottomLeft.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-        down.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-        bottomRight.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
-        playerAlias = nil
-        aiAlias = nil
+        let boardSpot: [UIButton] = [upperLeft, up, upperRight,
+                                     left, middle, right,
+                                     bottomLeft, down, bottomRight]
+        for buttons in boardSpot{
+            buttons.setImage(UIImage(named: "Empty"), for: UIControlState.normal)
+        }
         player = nil
+        playerAlias = nil
         ai = nil
-        flag = false
+        aiAlias = nil
         game?.board.clearBoard()
+        flag = false
     }
     
     //User test: Pass | Unit Test: None
@@ -232,8 +230,8 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
             guard((openMove.currentImage?.isEqual(imageX))! || (openMove.currentImage?.isEqual(imageO))!) else{
                 if (!flag){
                     openMove.setImage(playerAlias, for: UIControlState.normal)
-                    game?.board.setSpace(value: currentPlayer!, row: row, column: column)
-                    game?.currentPlayer = self.currentAi!
+                    game?.board.setSpace(value: (game?.currentPlayer)!, row: row, column: column)
+                    game?.currentPlayer = (game?.currentAI)!
                     if(game?.gameOver())!{
                         print("PLAYER HAS WON!")
                     }
@@ -241,18 +239,18 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
                 }
                 else if (flag){
                     openMove.setImage(aiAlias, for: UIControlState.normal)
-                    game?.board.setSpace(value: currentAi!, row: row, column: column)
+                    game?.board.setSpace(value: (game?.currentAI)!, row: row, column: column)
                     if(game?.gameOver())!{
                         print("AI HAS WON!")
                     }
-                    game?.currentPlayer = self.currentPlayer!
+                    game?.currentPlayer = (game?.currentPlayer)!
                 }
                 return
             }
         }
     }
     
-  
+    
     
     
 }

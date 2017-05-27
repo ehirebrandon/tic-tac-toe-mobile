@@ -10,6 +10,8 @@ import Foundation
 
 protocol BoardMoves{
     
+    
+    
     //1. Get the value of index of the board space
     func getSpace(row: Int, column: Int) -> Int
     //2. Get the index location for board space
