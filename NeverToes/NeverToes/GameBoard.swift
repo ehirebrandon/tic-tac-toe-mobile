@@ -11,7 +11,9 @@ import UIKit
 
 struct GameBoard: BoardMoves{
 
-    var boardSpace = [-1,-2,-3,-4,-5,-6,-7,-8]
+    var boardSpace = [-1,-2,-3,
+                      -4,-5,-6,
+                      -7,-8,-9]
     
     //var boardSpace: [Int] = {
     //    var tempBoard = [Int]()
@@ -26,20 +28,22 @@ struct GameBoard: BoardMoves{
     //    return tempBoard
     //}()
     
+    // returns value
     func getSpace(row: Int, column: Int) -> Int{
-        return((boardSpace[(row*2) + column]))
+        return((boardSpace[(row*3) + column]))
     }
     
+    // returns index
     func getSpot(row: Int, column: Int) -> Int{
-        return(row*2 + column)
+        return(row*3 + column)
     }
     
     mutating func setSpace(value: Int, row: Int, column: Int){
-        boardSpace[(row*2) + column] = value
+        boardSpace[(row*3) + column] = value
     }
     
-    mutating func removeSpace(value: Int, row: Int, column: Int){
-        boardSpace[(row*2) + column] = -1
+    mutating func removeSpace(row: Int, column: Int){
+        boardSpace[(row*3) + column] = -1
     }
     
     mutating func clearBoard(){

@@ -21,5 +21,5 @@ protocol TTTMoves{
 
 protocol TTTCheck {
     //2. Find out of if game is over
-    func gameOver() -> Bool
+    func gameOver(player: Int) -> Bool
 }

@@ -19,7 +19,7 @@ protocol BoardMoves{
     //3. Set a value for the board space at index
     mutating func setSpace(value: Int, row: Int, column: Int)
     //4. Remove a value from space at index
-    mutating func removeSpace(value: Int, row: Int, column: Int)
+    mutating func removeSpace(row: Int, column: Int)
     //5. Empty out the array of the board space
     mutating func clearBoard()
     

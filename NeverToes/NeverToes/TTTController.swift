@@ -22,7 +22,7 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     fileprivate let imageO = UIImage(named: "O")!
     
     fileprivate var flag = false
-    fileprivate var gameStop: Bool?
+    fileprivate var gameStart = false
     
     //This can be updated by the ai/player Model
     @IBOutlet weak var aiWin: UILabel!
@@ -98,11 +98,13 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     }
     
     func selectAlias(playerAlias: Int, aiAlias: Int){
-        if(game?.player == nil || game?.ai == nil){
-        }
+        guard(gameStart) else {
         if(self.player == nil || self.ai == nil){
+            print("im still nill")
             self.player = Player(alias: playerAlias, win: 0, loss: 0)
             self.ai = AI(alias: aiAlias, win: 0, loss: 0)
+            self.game = TTT(ai: self.ai!, player: self.player!)
+            gameStart = true
         }
         switch(playerAlias){
         case 1: self.playerAlias = imageX
@@ -119,11 +121,13 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
             break
         default: break
         }
-        
-        self.game = TTT(ai: self.ai!, player: self.player!)
-        game?.currentPlayer = playerAlias
-        game?.currentAI = aiAlias
-        
+        if let newGame = self.game{
+            print("new game")
+            newGame.currentPlayer = playerAlias
+            newGame.currentAI = aiAlias
+        }
+            return
+        }
     }
     
     // Semaphores
@@ -178,14 +182,11 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     
     // -Selected
     func checkSelect()-> Bool{
-        var bool = true
-        if (playerAlias == nil){
-            let alertController = UIAlertController(title: "Hey!", message: "Please select an alias to start", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
-            bool = false
-            self.present(alertController, animated: true, completion: nil)
+        if (playerAlias == nil || aiAlias == nil){
+            return false
+        }else{
+            return true
         }
-        return bool
     }
     
     //MARK: NotificationS
@@ -228,22 +229,29 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     func play(openMove: UIButton, row: Int, column: Int){
         if(checkSelect()){
             guard((openMove.currentImage?.isEqual(imageX))! || (openMove.currentImage?.isEqual(imageO))!) else{
-                if (!flag){
-                    openMove.setImage(playerAlias, for: UIControlState.normal)
+                if (!flag){  
+                    openMove.setImage(self.playerAlias, for: UIControlState.normal)
                     game?.board.setSpace(value: (game?.currentPlayer)!, row: row, column: column)
-                    game?.currentPlayer = (game?.currentAI)!
-                    if(game?.gameOver())!{
+                    if(game?.gameOver(player: (game?.currentPlayer)!))!{
                         print("PLAYER HAS WON!")
+                        print(game?.board ?? "none")
+                        return
                     }
+                    print("before ai\(String(describing: game?.board))")
                     waitAi()//semaphores
+                    print("after ai\(String(describing: game?.board))")
+                    
                 }
                 else if (flag){
                     openMove.setImage(aiAlias, for: UIControlState.normal)
                     game?.board.setSpace(value: (game?.currentAI)!, row: row, column: column)
-                    if(game?.gameOver())!{
+                    print("before player\(String(describing: game?.board))")
+                    if(game?.gameOver(player: (game?.currentAI)!))!{
                         print("AI HAS WON!")
+                        print(game?.board ?? "none")
+                        return
+                        
                     }
-                    game?.currentPlayer = (game?.currentPlayer)!
                 }
                 return
             }
