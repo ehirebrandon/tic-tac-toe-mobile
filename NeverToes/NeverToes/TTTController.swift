@@ -216,6 +216,7 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
         flag = false
         selectX.isEnabled = true
         selectO.isEnabled = true
+        gameStart = false
     }
     
     //User test: Pass | Unit Test: None
