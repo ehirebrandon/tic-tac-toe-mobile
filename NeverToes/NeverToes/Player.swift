@@ -17,20 +17,8 @@ class Player{
     
     var opponent: Player?
     
-    var win: Int{
-        get{
-            return self.win
-        }
-        set{
-        }
-    }
-    var loss: Int{
-        get{
-            return self.loss
-        }
-        set{
-        }
-    }
+    var win: Int
+    var loss: Int
     
     init(alias: Int, win: Int, loss: Int){
         self.alias = alias

@@ -95,6 +95,7 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     func selectAlias(playerAlias: Int, aiAlias: Int){
@@ -213,6 +214,8 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
         aiAlias = nil
         game?.board.clearBoard()
         flag = false
+        selectX.isEnabled = true
+        selectO.isEnabled = true
     }
     
     //User test: Pass | Unit Test: None
@@ -229,11 +232,14 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
     func play(openMove: UIButton, row: Int, column: Int){
         if(checkSelect()){
             guard((openMove.currentImage?.isEqual(imageX))! || (openMove.currentImage?.isEqual(imageO))!) else{
-                if (!flag){  
+                if (!flag){
                     openMove.setImage(self.playerAlias, for: UIControlState.normal)
                     game?.board.setSpace(value: (game?.currentPlayer)!, row: row, column: column)
                     if(game?.gameOver(player: (game?.currentPlayer)!))!{
                         print("PLAYER HAS WON!")
+                        game?.player?.win += 1
+                        game?.ai?.loss -= 1
+                        displayScore()
                         print(game?.board ?? "none")
                         return
                     }
@@ -248,6 +254,9 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
                     print("before player\(String(describing: game?.board))")
                     if(game?.gameOver(player: (game?.currentAI)!))!{
                         print("AI HAS WON!")
+                        game?.ai?.win += 1
+                        game?.player?.loss -= 1
+                        displayScore()
                         print(game?.board ?? "none")
                         return
                         
@@ -256,6 +265,13 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
                 return
             }
         }
+    }
+    
+    func displayScore(){
+        aiWin.text = String(describing: game?.ai?.win as! Int)
+        aiLoss.text = String(describing: game?.ai?.loss as! Int)
+        playerWin.text = String(describing: game?.player?.win as! Int)
+        playerLoss.text = String(describing: game?.player?.loss as! Int)
     }
     
     
