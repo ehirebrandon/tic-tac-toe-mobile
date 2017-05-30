@@ -8,6 +8,7 @@
 
 import XCTest
 
+
 class CalculateWinTests: XCTestCase {
     
     override func setUp() {

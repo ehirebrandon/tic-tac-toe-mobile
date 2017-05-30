@@ -153,11 +153,11 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
             break
         case 5: play(openMove: right, row: spot.row!, column: spot.column!)
             break
-        case 6: play(openMove: upperRight, row: spot.row!, column: spot.column!)
+        case 6: play(openMove: bottomLeft, row: spot.row!, column: spot.column!)
             break
         case 7: play(openMove: down, row: spot.row!, column: spot.column!)
             break
-        case 8: play(openMove: upperRight, row: spot.row!, column: spot.column!)
+        case 8: play(openMove: bottomRight, row: spot.row!, column: spot.column!)
             break
         default: break
         }
@@ -250,7 +250,7 @@ class TTTController: UIViewController, GameFunctions, GameChecks, Resets{
                     
                 }
                 else if (flag){
-                    openMove.setImage(aiAlias, for: UIControlState.normal)
+                    openMove.setImage(self.aiAlias, for: UIControlState.normal)
                     game?.board.setSpace(value: (game?.currentAI)!, row: row, column: column)
                     print("before player\(String(describing: game?.board))")
                     if(game?.gameOver(player: (game?.currentAI)!))!{
