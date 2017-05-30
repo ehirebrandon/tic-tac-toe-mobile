@@ -1,20 +1,22 @@
 //
-//  NeverToesTests.swift
-//  NeverToesTests
+//  GameCheckerTest.swift
+//  GameCheckerTest
 //
-//  Created by Brandon Lai on 5/4/17.
+//  Created by Brandon Lai on 5/30/17.
 //  Copyright © 2017 Brandon Lai. All rights reserved.
 //
+
 
 import XCTest
 @testable import NeverToes
 
 
-
-class NeverToesTests: XCTestCase {
+class GameCheckerTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
+
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     

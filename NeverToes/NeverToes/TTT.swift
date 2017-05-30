@@ -64,7 +64,7 @@ class TTT: Game, TTTMoves, TTTCheck, Minimax{
         }
         else if(!aiTurn){
             if(gameOver(player: (ai?.alias)!)){
-                return (10 - depth)
+                return (-10 + depth)
             }else{
                 var minBest: Int = 10000
                 for i in 0...2{
@@ -87,29 +87,38 @@ class TTT: Game, TTTMoves, TTTCheck, Minimax{
     func gameOver(player: Int) -> Bool{
 
         if (board.getSpace(row: 0, column: 0) == player && board.getSpace(row: 0, column: 1) == player && board.getSpace(row: 0, column: 2) == player){
+            print("true")
             return true
         }
         else if (board.getSpace(row: 1, column: 0) == player && board.getSpace(row: 1, column: 1) == player && board.getSpace(row: 1, column: 2) == player){
+            print("true")
             return true
         }
         else if (board.getSpace(row: 2, column: 0) == player && board.getSpace(row: 2, column: 1) == player && board.getSpace(row: 2, column: 2) == player){
+            print("true")
             return true
         }
         else if (board.getSpace(row: 0, column: 0) == player && board.getSpace(row: 1, column: 0) == player && board.getSpace(row: 2, column: 0) == player){
+            print("true")
             return true
         }
         else if (board.getSpace(row: 0, column: 1) == player && board.getSpace(row: 1, column: 1) == player && board.getSpace(row: 2, column: 1) == player){
+            print("true")
             return true
         }
         else if (board.getSpace(row: 0, column: 2) == player && board.getSpace(row: 1, column: 2) == player && board.getSpace(row: 2, column: 2) == player){
+            print("true")
             return true
         }
         else if (board.getSpace(row: 0, column: 0) == player && board.getSpace(row: 1, column: 1) == player && board.getSpace(row: 2, column: 2) == player){
+            print("true")
             return true
         }
         else if (board.getSpace(row: 0, column: 2) == player && board.getSpace(row: 1, column: 1) == player && board.getSpace(row: 2, column: 0) == player){
+            print("true")
             return true
         }else{
+            print("fools")
             return false
         }
     }

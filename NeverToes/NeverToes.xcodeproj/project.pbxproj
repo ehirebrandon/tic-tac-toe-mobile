@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CA54598C1EC4E2F10004B099 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA54598B1EC4E2F10004B099 /* Game.swift */; };
+		CA88F36B1EDDAA77008E5F31 /* GameCheckerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88F36A1EDDAA77008E5F31 /* GameCheckerTest.swift */; };
+		CA88F3791EDDAC32008E5F31 /* GameChecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88F3781EDDAC32008E5F31 /* GameChecks.swift */; };
 		CA9779641ECA3358007F895C /* Minimax.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9779631ECA3358007F895C /* Minimax.swift */; };
 		CA9779671ECF213D007F895C /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9779661ECF213D007F895C /* GameBoard.swift */; };
 		CA9779691ECF2B01007F895C /* TTTMoves.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9779681ECF2B01007F895C /* TTTMoves.swift */; };
@@ -31,6 +33,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CA88F36D1EDDAA77008E5F31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAF923431EBBD4BF00F461B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAF9234A1EBBD4BF00F461B8;
+			remoteInfo = NeverToes;
+		};
+		CA88F37B1EDDAC32008E5F31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAF923431EBBD4BF00F461B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAF9234A1EBBD4BF00F461B8;
+			remoteInfo = NeverToes;
+		};
 		CAF923631EBBD4BF00F461B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CAF923431EBBD4BF00F461B8 /* Project object */;
@@ -49,6 +65,12 @@
 
 /* Begin PBXFileReference section */
 		CA54598B1EC4E2F10004B099 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		CA88F3681EDDAA77008E5F31 /* GameCheckerTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameCheckerTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA88F36A1EDDAA77008E5F31 /* GameCheckerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCheckerTest.swift; sourceTree = "<group>"; };
+		CA88F36C1EDDAA77008E5F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA88F3761EDDAC32008E5F31 /* GameChecks.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameChecks.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA88F3781EDDAC32008E5F31 /* GameChecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameChecks.swift; sourceTree = "<group>"; };
+		CA88F37A1EDDAC32008E5F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA9779631ECA3358007F895C /* Minimax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Minimax.swift; sourceTree = "<group>"; };
 		CA9779661ECF213D007F895C /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		CA9779681ECF2B01007F895C /* TTTMoves.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTTMoves.swift; sourceTree = "<group>"; };
@@ -78,6 +100,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CA88F3651EDDAA77008E5F31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA88F3731EDDAC32008E5F31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAF923481EBBD4BF00F461B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,6 +138,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA88F3691EDDAA77008E5F31 /* GameCheckerTest */ = {
+			isa = PBXGroup;
+			children = (
+				CA88F36A1EDDAA77008E5F31 /* GameCheckerTest.swift */,
+				CA88F36C1EDDAA77008E5F31 /* Info.plist */,
+			);
+			path = GameCheckerTest;
+			sourceTree = "<group>";
+		};
+		CA88F3771EDDAC32008E5F31 /* GameChecks */ = {
+			isa = PBXGroup;
+			children = (
+				CA88F3781EDDAC32008E5F31 /* GameChecks.swift */,
+				CA88F37A1EDDAC32008E5F31 /* Info.plist */,
+			);
+			path = GameChecks;
+			sourceTree = "<group>";
+		};
 		CA9779651ECA3398007F895C /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +170,8 @@
 				CAF9234D1EBBD4BF00F461B8 /* NeverToes */,
 				CAF923651EBBD4BF00F461B8 /* NeverToesTests */,
 				CAF923701EBBD4C000F461B8 /* NeverToesUITests */,
+				CA88F3691EDDAA77008E5F31 /* GameCheckerTest */,
+				CA88F3771EDDAC32008E5F31 /* GameChecks */,
 				CAF9234C1EBBD4BF00F461B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,6 +182,8 @@
 				CAF9234B1EBBD4BF00F461B8 /* NeverToes.app */,
 				CAF923621EBBD4BF00F461B8 /* NeverToesTests.xctest */,
 				CAF9236D1EBBD4C000F461B8 /* NeverToesUITests.xctest */,
+				CA88F3681EDDAA77008E5F31 /* GameCheckerTest.xctest */,
+				CA88F3761EDDAC32008E5F31 /* GameChecks.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +292,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CA88F3671EDDAA77008E5F31 /* GameCheckerTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA88F3711EDDAA78008E5F31 /* Build configuration list for PBXNativeTarget "GameCheckerTest" */;
+			buildPhases = (
+				CA88F3641EDDAA77008E5F31 /* Sources */,
+				CA88F3651EDDAA77008E5F31 /* Frameworks */,
+				CA88F3661EDDAA77008E5F31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA88F36E1EDDAA77008E5F31 /* PBXTargetDependency */,
+			);
+			name = GameCheckerTest;
+			productName = GameCheckerTest;
+			productReference = CA88F3681EDDAA77008E5F31 /* GameCheckerTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA88F3751EDDAC32008E5F31 /* GameChecks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA88F37D1EDDAC32008E5F31 /* Build configuration list for PBXNativeTarget "GameChecks" */;
+			buildPhases = (
+				CA88F3721EDDAC32008E5F31 /* Sources */,
+				CA88F3731EDDAC32008E5F31 /* Frameworks */,
+				CA88F3741EDDAC32008E5F31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA88F37C1EDDAC32008E5F31 /* PBXTargetDependency */,
+			);
+			name = GameChecks;
+			productName = GameChecks;
+			productReference = CA88F3761EDDAC32008E5F31 /* GameChecks.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CAF9234A1EBBD4BF00F461B8 /* NeverToes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAF923761EBBD4C000F461B8 /* Build configuration list for PBXNativeTarget "NeverToes" */;
@@ -297,6 +391,18 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Brandon Lai";
 				TargetAttributes = {
+					CA88F3671EDDAA77008E5F31 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 86773TB4HG;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CAF9234A1EBBD4BF00F461B8;
+					};
+					CA88F3751EDDAC32008E5F31 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 86773TB4HG;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CAF9234A1EBBD4BF00F461B8;
+					};
 					CAF9234A1EBBD4BF00F461B8 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 86773TB4HG;
@@ -332,11 +438,27 @@
 				CAF9234A1EBBD4BF00F461B8 /* NeverToes */,
 				CAF923611EBBD4BF00F461B8 /* NeverToesTests */,
 				CAF9236C1EBBD4C000F461B8 /* NeverToesUITests */,
+				CA88F3671EDDAA77008E5F31 /* GameCheckerTest */,
+				CA88F3751EDDAC32008E5F31 /* GameChecks */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CA88F3661EDDAA77008E5F31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA88F3741EDDAC32008E5F31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAF923491EBBD4BF00F461B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,6 +486,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CA88F3641EDDAA77008E5F31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA88F36B1EDDAA77008E5F31 /* GameCheckerTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA88F3721EDDAC32008E5F31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA88F3791EDDAC32008E5F31 /* GameChecks.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAF923471EBBD4BF00F461B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -406,6 +544,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CA88F36E1EDDAA77008E5F31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAF9234A1EBBD4BF00F461B8 /* NeverToes */;
+			targetProxy = CA88F36D1EDDAA77008E5F31 /* PBXContainerItemProxy */;
+		};
+		CA88F37C1EDDAC32008E5F31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAF9234A1EBBD4BF00F461B8 /* NeverToes */;
+			targetProxy = CA88F37B1EDDAC32008E5F31 /* PBXContainerItemProxy */;
+		};
 		CAF923641EBBD4BF00F461B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CAF9234A1EBBD4BF00F461B8 /* NeverToes */;
@@ -438,6 +586,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CA88F36F1EDDAA78008E5F31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 86773TB4HG;
+				INFOPLIST_FILE = GameCheckerTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMG.GameCheckerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeverToes.app/NeverToes";
+			};
+			name = Debug;
+		};
+		CA88F3701EDDAA78008E5F31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 86773TB4HG;
+				INFOPLIST_FILE = GameCheckerTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMG.GameCheckerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeverToes.app/NeverToes";
+			};
+			name = Release;
+		};
+		CA88F37E1EDDAC32008E5F31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 86773TB4HG;
+				INFOPLIST_FILE = GameChecks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMG.GameChecks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeverToes.app/NeverToes";
+			};
+			name = Debug;
+		};
+		CA88F37F1EDDAC32008E5F31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 86773TB4HG;
+				INFOPLIST_FILE = GameChecks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CMG.GameChecks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeverToes.app/NeverToes";
+			};
+			name = Release;
+		};
 		CAF923741EBBD4C000F461B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -620,6 +824,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CA88F3711EDDAA78008E5F31 /* Build configuration list for PBXNativeTarget "GameCheckerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA88F36F1EDDAA78008E5F31 /* Debug */,
+				CA88F3701EDDAA78008E5F31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CA88F37D1EDDAC32008E5F31 /* Build configuration list for PBXNativeTarget "GameChecks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA88F37E1EDDAC32008E5F31 /* Debug */,
+				CA88F37F1EDDAC32008E5F31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CAF923461EBBD4BF00F461B8 /* Build configuration list for PBXProject "NeverToes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
